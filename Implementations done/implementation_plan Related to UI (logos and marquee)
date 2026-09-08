@@ -1,0 +1,122 @@
+# Implementation Plan: Upgrade Tech Stack Marquee & Capabilities Section
+
+This plan outlines focused visual and structural upgrades to **only two UI areas** in the portfolio:
+1. **The animated technology-stack marquee/flow** below the Hero section.
+2. **The "02 — CAPABILITIES" section**.
+
+---
+
+## 1. Identified Components & Files
+
+Based on our inspection of the codebase:
+- **Area A (Technology-stack animated flow):**
+  - Component: [TechStackFlow.tsx](file:///d:/Portfolio_Anitgrav/components/TechStackFlow.tsx) (`TechStackFlow` component)
+  - Styling & Keyframes: [globals.css](file:///d:/Portfolio_Anitgrav/app/globals.css) (`.ticker-wrap`, `.tech-track`, `.tech-chip`, `@keyframes marquee`)
+- **Area B ("02 — CAPABILITIES" section):**
+  - Component: [Sections.tsx](file:///d:/Portfolio_Anitgrav/components/Sections.tsx) (`Skills` component)
+  - Data: [technologies.ts](file:///d:/Portfolio_Anitgrav/data/technologies.ts) (`technologies` array and `skillGroups`)
+- **Shared Assets & Utilities:**
+  - PNG Logos: Copied to `/public/logos/` from `./logos/`
+  - Icon Component: A unified [TechIcon.tsx](file:///d:/Portfolio_Anitgrav/components/TechIcon.tsx) to reliably render official brand logos (from `/public/logos/`) and clean fallback technical icons (Lucide / official SVGs) for all technologies.
+
+---
+
+## 2. Proposed Changes
+
+### Component 1: Technology Icon System
+#### [NEW] [TechIcon.tsx](file:///d:/Portfolio_Anitgrav/components/TechIcon.tsx)
+Create a lightweight, reusable component that maps technology names to their corresponding icons:
+- **Brand PNGs** from `/public/logos/`:
+  - Python (`/logos/pyton.png`)
+  - NumPy (`/logos/numpy.png`)
+  - Pandas (`/logos/pandas.png`)
+  - Scikit-learn (`/logos/scikit learn.png`)
+  - Hugging Face (`/logos/hugging face.png`)
+  - LangChain (`/logos/langchain.png`)
+  - LangGraph (`/logos/langGraph.png`)
+  - CrewAI (`/logos/crewai.png`)
+  - Ollama (`/logos/Ollama.png`)
+  - Power BI (`/logos/powerBi.png`)
+  - SQL (`/logos/sql.png`)
+  - FastAPI (`/logos/fastAPI.png`)
+  - Docker (`/logos/docker.png`)
+  - Linux (`/logos/linux.png`)
+  - GitHub (`/logos/github.png`)
+- **Crisp Vector SVGs / Lucide icons** for remaining technologies:
+  - PostgreSQL (Official Elephant SVG)
+  - Redis (Official Redis SVG)
+  - Git (Official Git Branch SVG)
+  - Microsoft Excel (Official Excel Sheet SVG)
+  - Matplotlib (`LineChart` / visualization icon)
+  - SQLAlchemy (`Database` / `Boxes`)
+  - RAG (`DatabaseZap` / `Sparkles`)
+  - NLP (`BrainCircuit` / `Languages`)
+  - NLTK (`BookOpenCheck` / `Binary`)
+- Consistent dimensions, sharp rendering, dark-mode friendly styling, and image error handling.
+
+---
+
+### Component 2: Technology Stack Flow (Area 1)
+#### [MODIFY] [TechStackFlow.tsx](file:///d:/Portfolio_Anitgrav/components/TechStackFlow.tsx)
+- Upgrade the ticker items to include `[Official technology logo/icon] + [Technology name]` using `TechIcon`.
+- Maintain the seamless looping stream by duplicating the technology sequence (`stream = [...ticker, ...ticker]`).
+- Add edge gradient masks (`mask-image`) in the container so items seamlessly fade in and out at viewport edges without harsh clipping.
+- Add subtle hover interactions:
+  - The ticker track smoothly pauses or slows on hover.
+  - Individual tech chips subtly brighten border and background with a delicate lift (`scale-[1.02]`).
+- Preserve accessibility with `prefers-reduced-motion`.
+
+#### [MODIFY] [globals.css](file:///d:/Portfolio_Anitgrav/app/globals.css)
+- Refine `.ticker-wrap` and `.tech-track`:
+  - Add edge gradient mask: `mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent)`.
+  - Adjust animation timing for smooth, continuous marquee velocity (~45s).
+- Refine `.tech-chip`:
+  - Subtle dark border (`var(--line)`), background `var(--surface)`, backdrop blur.
+  - Hover states: slightly brighter border (`var(--accent)` mix), subtle lift.
+
+---
+
+### Component 3: "02 — CAPABILITIES" Section (Area 2)
+#### [MODIFY] [Sections.tsx](file:///d:/Portfolio_Anitgrav/components/Sections.tsx) (`Skills` component only)
+- Keep the exact five categories and their existing technologies:
+  1. AI / Machine Learning
+  2. NLP / Generative AI
+  3. Data Analytics
+  4. Backend
+  5. Engineering & Tools
+- Upgrade visual presentation:
+  - Distinct category headers with category-specific accent icons (`Brain`, `Sparkles`, `BarChart3`, `Server`, `Cpu` / `Wrench`).
+  - Technology count indicator / subtle pill badge for each category.
+  - Refined icon-chip treatment for each technology:
+    - Displays `[TechIcon] + [Tech Name]`.
+    - Clean dark-surface background with subtle 1px border.
+    - Subtle hover effect: subtle lift (`-translate-y-0.5`), border highlight, and soft glow.
+  - Grid & Responsiveness:
+    - Mobile: 1 column.
+    - Tablet (`md:`): 2 columns.
+    - Desktop (`lg:` / `xl:`): Balanced grid with 6-column spanning (first row: three 2-span cards; second row: two 3-span cards) to eliminate awkward empty gaps and ensure both rows feel deliberate and finished.
+  - Preserve dark minimalist aesthetic with zero flashy or gimmicky elements (no progress bars, no fake skill percentages, no unnecessary text).
+
+---
+
+## 3. Strict Guardrails
+
+- **NO changes** to:
+  - Hero layout or typography
+  - Navigation
+  - About section
+  - Projects section
+  - Contact section
+  - Project cards / content
+  - Existing color variables / theme structure
+  - Any backend or unrelated files
+
+---
+
+## 4. Verification Plan
+
+1. **Visual & Interactive Verification**:
+   - Check the marquee stream in the browser: smooth continuous loop, clean logos, smooth edge masking, hover effects.
+   - Check the "02 — Capabilities" section: category headers, icon chips, balanced 3+2 grid layout on desktop, responsive behavior on tablet/mobile.
+2. **Next.js Dev Server Check**:
+   - Verify there are no console errors, missing image warnings, or TypeScript compilation issues.
