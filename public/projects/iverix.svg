@@ -1,0 +1,87 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#121218"/>
+  <!-- Subtle background grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E1E2A" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="glow" x1="600" y1="200" x2="600" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B87FF" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#8B87FF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <circle cx="600" cy="337" r="260" fill="url(#glow)"/>
+
+  <!-- Outer frame -->
+  <rect x="48" y="44" width="1104" height="587" rx="16" fill="#171720" stroke="#2A2A38" stroke-width="1.5"/>
+
+  <!-- Header bar -->
+  <line x1="48" y1="104" x2="1152" y2="104" stroke="#252533" stroke-width="1.5"/>
+  <circle cx="84" cy="74" r="5" fill="#3D3D52"/>
+  <circle cx="104" cy="74" r="5" fill="#2E2E3E"/>
+  <circle cx="124" cy="74" r="5" fill="#2E2E3E"/>
+  <rect x="520" y="64" width="160" height="20" rx="10" fill="#1F1F2C" stroke="#2A2A38"/>
+  <text x="600" y="78" fill="#757488" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em" text-anchor="middle">IVERIX AUDIT ENGINE</text>
+
+  <!-- Dual Knowledge Base Workflow Graphic -->
+  <!-- Left Box: Static Rules & Standards -->
+  <rect x="120" y="160" width="280" height="380" rx="12" fill="#1B1B26" stroke="#2E2E40" stroke-width="1.5"/>
+  <rect x="144" y="184" width="32" height="32" rx="8" fill="#252538"/>
+  <path d="M154 200h12M154 195h8M154 205h10" stroke="#8B87FF" stroke-width="2" stroke-linecap="round"/>
+  <rect x="190" y="190" width="140" height="14" rx="4" fill="#2B2B3E"/>
+  <rect x="190" y="210" width="90" height="10" rx="3" fill="#222230"/>
+  
+  <rect x="144" y="246" width="232" height="68" rx="8" fill="#15151F" stroke="#242434"/>
+  <rect x="160" y="262" width="120" height="10" rx="3" fill="#2F2F44"/>
+  <rect x="160" y="282" width="180" height="8" rx="3" fill="#232332"/>
+  <rect x="160" y="296" width="140" height="8" rx="3" fill="#232332"/>
+
+  <rect x="144" y="328" width="232" height="68" rx="8" fill="#15151F" stroke="#242434"/>
+  <rect x="160" y="344" width="110" height="10" rx="3" fill="#2F2F44"/>
+  <rect x="160" y="364" width="160" height="8" rx="3" fill="#232332"/>
+  <rect x="160" y="378" width="130" height="8" rx="3" fill="#232332"/>
+
+  <rect x="144" y="410" width="232" height="68" rx="8" fill="#15151F" stroke="#242434"/>
+  <rect x="160" y="426" width="130" height="10" rx="3" fill="#2F2F44"/>
+  <rect x="160" y="446" width="170" height="8" rx="3" fill="#232332"/>
+  <rect x="160" y="460" width="120" height="8" rx="3" fill="#232332"/>
+
+  <!-- Center Core: ChromaDB & LangChain Synthesis -->
+  <circle cx="600" cy="350" r="80" fill="#1B1B27" stroke="#3A3A54" stroke-width="2"/>
+  <circle cx="600" cy="350" r="58" fill="#202030" stroke="#8B87FF" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="565" y="335" width="70" height="14" rx="4" fill="#8B87FF" fill-opacity="0.25"/>
+  <text x="600" y="346" fill="#8B87FF" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="0.1em" text-anchor="middle">DUAL RAG</text>
+  <text x="600" y="366" fill="#A6A4B0" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" text-anchor="middle">Vector Ingestion</text>
+
+  <!-- Connecting Lines -->
+  <path d="M400 350 L520 350" stroke="#8B87FF" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.7"/>
+  <path d="M680 350 L800 350" stroke="#8B87FF" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.7"/>
+
+  <!-- Right Box: Extracted BMR Audit Reports -->
+  <rect x="800" y="160" width="280" height="380" rx="12" fill="#1B1B26" stroke="#2E2E40" stroke-width="1.5"/>
+  <rect x="824" y="184" width="32" height="32" rx="8" fill="#252538"/>
+  <circle cx="840" cy="200" r="7" stroke="#8B87FF" stroke-width="2"/>
+  <path d="M837 200l2 2 4-4" stroke="#8B87FF" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="870" y="190" width="140" height="14" rx="4" fill="#2B2B3E"/>
+  <rect x="870" y="210" width="100" height="10" rx="3" fill="#222230"/>
+
+  <!-- Audit Report Cards -->
+  <rect x="824" y="246" width="232" height="80" rx="8" fill="#15151F" stroke="#242434"/>
+  <circle cx="848" cy="272" r="4" fill="#585CC7"/>
+  <rect x="864" y="268" width="110" height="9" rx="3" fill="#38384E"/>
+  <rect x="848" y="292" width="184" height="7" rx="3" fill="#252536"/>
+  <rect x="848" y="306" width="140" height="7" rx="3" fill="#252536"/>
+
+  <rect x="824" y="340" width="232" height="80" rx="8" fill="#15151F" stroke="#242434"/>
+  <circle cx="848" cy="366" r="4" fill="#585CC7"/>
+  <rect x="864" y="362" width="130" height="9" rx="3" fill="#38384E"/>
+  <rect x="848" y="386" width="170" height="7" rx="3" fill="#252536"/>
+  <rect x="848" y="400" width="120" height="7" rx="3" fill="#252536"/>
+
+  <rect x="824" y="434" width="232" height="80" rx="8" fill="#15151F" stroke="#242434"/>
+  <circle cx="848" cy="460" r="4" fill="#585CC7"/>
+  <rect x="864" y="456" width="100" height="9" rx="3" fill="#38384E"/>
+  <rect x="848" y="480" width="160" height="7" rx="3" fill="#252536"/>
+  <rect x="848" y="494" width="130" height="7" rx="3" fill="#252536"/>
+</svg>

@@ -2,8 +2,46 @@
 import { useReducedMotion } from "framer-motion";
 import { TechIcon } from "./TechIcon";
 
-const nodes = ["Python", "NumPy", "Pandas", "Scikit-learn", "NLP", "NLTK", "Hugging Face", "LangChain", "LangGraph", "CrewAI", "RAG", "Ollama", "Power BI", "SQL", "FastAPI", "PostgreSQL", "Redis", "Git", "GitHub", "Docker", "Linux"];
-export function TechEcosystem() { const reduceMotion = useReducedMotion(); return <div className={`ecosystem ${reduceMotion ? "motion-reduce" : ""}`} aria-label="Technology ecosystem: Python, data, AI, and backend tools"><svg className="ecosystem-lines" viewBox="0 0 520 420" fill="none" aria-hidden="true"><path d="M64 210C126 82 208 74 266 190S395 340 468 149" /><path d="M33 312C128 252 188 331 269 239S395 78 481 93" /><path d="M61 95C131 159 187 121 250 186S381 244 463 292" /></svg><div className="ecosystem-core"><span>AI</span><small>systems</small></div>{nodes.map((node, i) => <span key={node} className={`ecosystem-node node-${i + 1}`}>{node}</span>)}</div>; }
+const nodes = [
+  "Python",
+  "LangChain",
+  "FastAPI",
+  "Scikit-learn",
+  "PostgreSQL",
+  "Docker",
+  "SQL",
+  "NumPy",
+  "Pandas",
+  "NLP",
+  "RAG",
+  "Ollama",
+  "CrewAI"
+];
+export function TechEcosystem() {
+  const reduceMotion = useReducedMotion();
+  return (
+    <div
+      className={`ecosystem ${reduceMotion ? "motion-reduce" : ""}`}
+      aria-label="Technology ecosystem: Python, data, AI, and backend tools"
+    >
+      <svg className="ecosystem-lines" viewBox="0 0 520 420" fill="none" aria-hidden="true">
+        <path d="M75 210C130 95 205 85 260 190S385 330 445 155" />
+        <path d="M50 300C135 245 190 315 265 235S385 90 465 105" />
+        <path d="M70 105C135 160 190 125 250 185S375 240 450 280" />
+      </svg>
+      <div className="ecosystem-core">
+        <span>AI</span>
+        <small>systems</small>
+      </div>
+      {nodes.map((node, i) => (
+        <span key={node} className={`ecosystem-node node-${i + 1}`}>
+          {node}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 
 const ticker = [
   "Python",
