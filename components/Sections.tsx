@@ -95,7 +95,7 @@ export function About() {
               I'm Tanmay, a final-year Computer Engineering student who enjoys turning messy real-world problems into practical AI, data, and backend systems.
             </p>
             <p className="muted max-w-xl text-sm sm:text-base leading-relaxed">
-              I build systems across RAG, NLP, machine learning, analytics, and backend APIs—focusing on grounded context, reliable data flow, and clean architecture rather than isolated models.
+              I build systems across RAG, NLP, machine learning, analytics, and backend APIs—focusing on grounded context, reliable data flow, and clean architecture.
             </p>
           </div>
         </Reveal>
@@ -132,8 +132,6 @@ const internshipTechs = [
   "LangChain",
   "ChromaDB",
   "Ollama",
-  "RAG",
-  "GitHub",
 ];
 
 const keyContributions = [
@@ -149,26 +147,26 @@ export function Experience() {
       <div className="shell">
         <Reveal>
           <p className="eyebrow">02 — Experience</p>
-          <h2 className="display mt-3.5 text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+          <h2 className="display mt-3 text-3xl sm:text-4xl lg:text-[2.65rem] tracking-tight">
             Professional experience,
             <br />
             applied to real systems.
           </h2>
         </Reveal>
 
-        <Reveal delay={0.06} className="mt-10 sm:mt-12">
+        <Reveal delay={0.06} className="mt-8 sm:mt-10">
           <div className="card overflow-hidden transition-all duration-300 hover:border-opacity-80">
-            {/* Header / Role Info */}
+            {/* ZONE 1: Experience Overview */}
             <div
               className="p-6 sm:p-8 lg:p-10 border-b"
               style={{
                 borderColor: "var(--line)",
-                background: "color-mix(in srgb, var(--surface-raised) 40%, transparent)",
+                background: "color-mix(in srgb, var(--surface-raised) 45%, transparent)",
               }}
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text)]">
+                  <h3 className="text-xl sm:text-2xl lg:text-[1.75rem] font-bold tracking-tight text-[var(--text)]">
                     AI Developer Intern
                   </h3>
                   <div className="mt-1 flex flex-wrap items-center gap-2.5 text-sm sm:text-base font-semibold">
@@ -195,31 +193,31 @@ export function Experience() {
                 </div>
               </div>
 
-              <p className="muted mt-5 max-w-4xl text-base sm:text-lg leading-relaxed text-[var(--text)]">
+              <p className="muted mt-5 max-w-4xl text-sm sm:text-base leading-relaxed text-[var(--text)]">
                 Engineered an enterprise document processing pipeline for 100+ page documents, combining OCR, LLM-powered extraction, and AI-based verification. Architected and implemented core Python components for vector retrieval, knowledge-base management, and LLM integration workflows.
               </p>
 
-              <p className="mt-3 text-xs text-[var(--muted)] flex items-center gap-1.5">
+              <p className="mt-3.5 text-xs text-[var(--muted)] flex items-center gap-2 font-medium">
                 <span
-                  className="h-1.5 w-1.5 rounded-full"
+                  className="h-1.5 w-1.5 rounded-full shrink-0"
                   style={{ backgroundColor: "var(--accent)" }}
                 />
                 <span>Collaborated with a 4-member engineering team through GitHub.</span>
               </p>
             </div>
 
-            {/* Grid Layout: Contributions on Left, Supporting Context on Right */}
-            <div className="p-6 sm:p-8 lg:p-10 grid gap-8 lg:gap-12 lg:grid-cols-[1.25fr_.75fr]">
-              {/* Left Column: Key Contributions */}
+            {/* Content Body: Zone 2 (Contributions) and Zone 3 (Evidence) */}
+            <div className="p-6 sm:p-8 lg:p-10 grid gap-8 lg:gap-12 lg:grid-cols-[1.2fr_.8fr]">
+              {/* ZONE 2: Key Contributions */}
               <div>
-                <p className="eyebrow !text-[0.68rem] tracking-wider mb-5">
+                <p className="eyebrow !text-[0.68rem] tracking-wider mb-5 text-[var(--muted)]">
                   Key Contributions
                 </p>
                 <ul className="space-y-4">
                   {keyContributions.map((point, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-3 text-sm sm:text-base leading-relaxed text-[var(--muted)]"
+                      className="flex items-start gap-3.5 text-sm sm:text-[0.94rem] leading-relaxed text-[var(--muted)]"
                     >
                       <span
                         className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[0.68rem] font-bold mt-0.5"
@@ -237,26 +235,26 @@ export function Experience() {
                 </ul>
               </div>
 
-              {/* Right Column: Impact, Tech Stack, Selected Project, Documentation */}
+              {/* ZONE 3: Evidence (Impact, Technologies, Selected Project, Documentation) */}
               <div className="flex flex-col gap-6">
-                {/* Impact Area */}
+                {/* Visual Impact Metric - Prominent Anchor */}
                 <div
-                  className="p-5 rounded-2xl border"
+                  className="p-5 sm:p-6 rounded-2xl border"
                   style={{
                     borderColor: "var(--line)",
                     background: "var(--surface-raised)",
                   }}
                 >
                   <p className="eyebrow !text-[0.65rem] tracking-wider">Impact</p>
-                  <p className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text)]">
+                  <p className="mt-2 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[var(--text)]">
                     80–90%
                   </p>
-                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1 font-medium leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 font-medium leading-relaxed">
                     Automation of repetitive verification work
                   </p>
                 </div>
 
-                {/* Technologies */}
+                {/* Technologies and Focus */}
                 <div>
                   <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
                     Technologies
@@ -273,24 +271,33 @@ export function Experience() {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-2.5 flex items-center gap-1.5 text-[0.72rem] text-[var(--muted)]">
+                    <span className="font-semibold uppercase tracking-wider text-[0.65rem]">Focus:</span>
+                    <span>RAG · Document Intelligence · LLM Workflows</span>
+                  </div>
                 </div>
 
                 {/* Selected Internship Project */}
                 <div className="pt-5 border-t" style={{ borderColor: "var(--line)" }}>
-                  <p className="eyebrow !text-[0.65rem] tracking-wider">
-                    Selected Internship Project
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="text-[0.62rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border"
+                      style={{
+                        borderColor: "var(--accent)",
+                        color: "var(--accent)",
+                        background: "color-mix(in srgb, var(--accent) 10%, transparent)",
+                      }}
+                    >
+                      Internship Project
+                    </span>
+                  </div>
                   <div className="mt-2 flex items-center justify-between gap-2">
-                    <h4 className="text-base sm:text-lg font-bold text-[var(--text)]">Iverix</h4>
+                    <h4 className="text-lg font-bold text-[var(--text)]">Iverix</h4>
                     <Link
                       href="/projects/iverix"
                       className="btn btn-primary !py-1.5 !px-3 text-xs group/link inline-flex items-center gap-1.5"
                     >
-                      <span>View case study</span>
-                      <ArrowRight
-                        size={13}
-                        className="transition-transform duration-200 group-hover/link:translate-x-1"
-                      />
+                      <span>View case study →</span>
                     </Link>
                   </div>
                   <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 leading-relaxed">
@@ -309,12 +316,12 @@ export function Experience() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Open offer letter in Google Drive (opens in a new tab)"
-                      className="btn text-xs !py-2 !px-3.5 group/doc"
+                      className="btn text-xs !py-1.5 !px-3 group/doc border-[var(--line)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--text)]"
                     >
-                      <FileText size={14} style={{ color: "var(--accent)" }} />
+                      <FileText size={13} style={{ color: "var(--accent)" }} />
                       <span>Offer Letter</span>
                       <ExternalLink
-                        size={12}
+                        size={11}
                         className="text-[var(--muted)] transition-transform duration-200 group-hover/doc:translate-x-0.5 group-hover/doc:-translate-y-0.5"
                       />
                     </a>
@@ -323,12 +330,12 @@ export function Experience() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Open internship certificate in Google Drive (opens in a new tab)"
-                      className="btn text-xs !py-2 !px-3.5 group/doc"
+                      className="btn text-xs !py-1.5 !px-3 group/doc border-[var(--line)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--text)]"
                     >
-                      <FileCheck size={14} style={{ color: "var(--accent)" }} />
+                      <FileCheck size={13} style={{ color: "var(--accent)" }} />
                       <span>Internship Certificate</span>
                       <ExternalLink
-                        size={12}
+                        size={11}
                         className="text-[var(--muted)] transition-transform duration-200 group-hover/doc:translate-x-0.5 group-hover/doc:-translate-y-0.5"
                       />
                     </a>
@@ -539,11 +546,7 @@ function ProjectCard({
           className="btn btn-primary text-xs sm:text-sm !py-2 !px-3.5 group/cta"
           href={`/projects/${project.slug}`}
         >
-          <span>View case study</span>
-          <ArrowRight
-            size={14}
-            className="transition-transform duration-200 group-hover/cta:translate-x-1"
-          />
+          <span>View case study →</span>
         </Link>
         {github && (
           <a
@@ -577,10 +580,10 @@ export function Projects() {
       <div className="shell">
         <Reveal>
           <p className="eyebrow">04 — Selected work</p>
-          <h2 className="display mt-3.5 text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+          <h2 className="display mt-3 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
             Proof, not promises.
           </h2>
-          <p className="muted mt-3.5 max-w-2xl text-sm sm:text-base leading-relaxed">
+          <p className="muted mt-3 max-w-2xl text-sm sm:text-base leading-relaxed">
             A selection of projects where I apply AI, data, and software engineering to real-world problems.
           </p>
         </Reveal>
@@ -631,15 +634,15 @@ export function Contact() {
   return (
     <section id="contact" className="section">
       <div className="shell">
-        <Reveal className="card relative overflow-hidden p-7 sm:p-11 lg:p-12">
+        <Reveal className="card relative overflow-hidden p-7 sm:p-10 lg:p-12">
           <div className="grid-pattern absolute inset-0" />
           <div className="relative grid gap-8 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
             <div>
               <p className="eyebrow">05 — Contact</p>
-              <h2 className="display mt-3.5 text-3xl sm:text-5xl lg:text-5xl tracking-tight">
+              <h2 className="display mt-3 text-2xl sm:text-4xl lg:text-[2.65rem] tracking-tight">
                 Let's build something useful.
               </h2>
-              <p className="muted mt-4 max-w-2xl text-sm sm:text-base leading-relaxed">
+              <p className="muted mt-3.5 max-w-2xl text-sm sm:text-base leading-relaxed">
                 I'm currently open to internship and full-time opportunities in AI, Data Science, Generative AI, Data Analytics, and Backend Engineering.
               </p>
 

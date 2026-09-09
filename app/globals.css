@@ -324,6 +324,15 @@ button { font: inherit; cursor: pointer; }
   color: var(--accent);
 }
 
+/* Availability Indicator Breathing Animation */
+.availability-dot {
+  animation: availabilityBreathe 4s ease-in-out infinite;
+}
+@keyframes availabilityBreathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *:before, *:after {
     animation-duration: .01ms!important;
@@ -343,6 +352,11 @@ button { font: inherit; cursor: pointer; }
   .pulse-path {
     display: none!important;
   }
+  .availability-dot {
+    animation: none!important;
+    opacity: 1!important;
+    transform: none!important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -350,3 +364,4 @@ button { font: inherit; cursor: pointer; }
   .section { padding: 68px 0; }
   .display { letter-spacing: -.045em; }
 }
+

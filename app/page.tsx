@@ -27,20 +27,32 @@ export default function Home() {
         <div className="shell relative grid min-h-[600px] items-center gap-10 py-14 sm:py-18 lg:py-22 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <Reveal>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-3">
                 <p className="eyebrow">AI · DATA SCIENCE · GENAI · BACKEND</p>
-                <div className="inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-wider text-[var(--muted)]">
+                <div
+                  className="group/avail inline-flex w-fit items-center gap-2.5 rounded-full border px-3.5 py-1.5 transition-all duration-200 hover:border-[var(--accent)] hover:bg-[var(--surface-raised)] cursor-default"
+                  style={{
+                    borderColor: "var(--line)",
+                    backgroundColor: "color-mix(in srgb, var(--surface) 80%, transparent)",
+                  }}
+                >
                   <span
-                    className="h-1.5 w-1.5 rounded-full"
+                    className="availability-dot h-2 w-2 rounded-full shrink-0"
                     style={{ backgroundColor: "var(--accent)" }}
                   />
-                  <span>Open to internships & full-time opportunities</span>
+                  <span className="text-[0.68rem] font-bold uppercase tracking-wider text-[var(--text)]">
+                    Available for opportunities
+                  </span>
+                  <span className="text-[var(--line)] text-xs leading-none select-none">•</span>
+                  <span className="text-[0.72rem] font-medium text-[var(--muted)]">
+                    Internships · Full-time
+                  </span>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.06}>
-              <h1 className="display mt-5 text-4xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.04] tracking-tight">
+              <h1 className="display mt-5 text-4xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.06] tracking-tight">
                 Hi, I'm Tanmay.
                 <br />
                 <span style={{ color: "var(--accent)" }}>
@@ -50,9 +62,14 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.12}>
-              <p className="muted mt-6 max-w-xl text-base sm:text-lg lg:text-xl leading-relaxed">
-                I build practical AI, data, and backend systems—from RAG pipelines and NLP applications to analytics workflows and APIs. Final-year Computer Engineering student focused on turning complex technical problems into dependable, production-ready solutions.
-              </p>
+              <div className="mt-6 max-w-xl space-y-3">
+                <p className="muted text-base sm:text-lg lg:text-xl leading-relaxed">
+                  I build practical AI, data, and backend systems—from RAG pipelines and NLP applications to analytics workflows and APIs.
+                </p>
+                <p className="muted text-sm sm:text-base leading-relaxed text-[var(--muted)]">
+                  Final-year Computer Engineering student focused on turning complex technical problems into dependable, production-ready solutions.
+                </p>
+              </div>
             </Reveal>
 
             <Reveal delay={0.18} className="mt-8 flex flex-wrap gap-3">

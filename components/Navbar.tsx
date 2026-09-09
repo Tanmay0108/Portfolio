@@ -7,7 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const links = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
-  { id: "skills", label: "Capabilities" },
+  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
@@ -21,6 +21,10 @@ export function Navbar() {
       // If visitor is near the top (in Hero section), no navigation link should appear active
       if (window.scrollY < 260) {
         setActive("");
+        // Clean up hash if user scrolled back to top
+        if (window.location.hash) {
+          window.history.replaceState(null, "", window.location.pathname);
+        }
         return;
       }
 
@@ -73,13 +77,27 @@ export function Navbar() {
     };
   }, [open]);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    setOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      // Cleanly update history state without jarring jumps
+      window.history.replaceState(null, "", `#${id}`);
+    }
+  };
+
   const renderNavLink = (id: string, label: string, mobile = false) => {
     const isActive = active === id;
     return (
       <a
         className={`${mobile ? "mobile-nav-link" : "nav-link"} ${isActive ? "is-active" : ""}`}
         href={`#${id}`}
-        onClick={() => setOpen(false)}
+        onClick={(e) => handleNavClick(e, id)}
       >
         {label}
       </a>
@@ -88,13 +106,13 @@ export function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 backdrop-blur-md transition-colors duration-200"
+      className="w-full border-b transition-colors duration-200"
       style={{
-        backgroundColor: "color-mix(in srgb, var(--bg) 85%, transparent)",
-        borderBottom: "1px solid var(--line)",
+        backgroundColor: "var(--bg)",
+        borderColor: "var(--line)",
       }}
     >
-      <div className="shell flex items-center justify-between py-3.5 sm:py-4">
+      <div className="shell flex items-center justify-between py-4 sm:py-4.5">
         <a href="#top" className="font-bold tracking-tight text-xl group" aria-label="Tanmay home">
           Tanmay<span style={{ color: "var(--accent)" }}>.</span>
         </a>
