@@ -84,7 +84,7 @@ export function Navbar() {
             <a
               href="/resume/tanmay-resume.pdf"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-primary !min-h-[38px] !py-2 !px-4 text-xs font-semibold uppercase tracking-wider"
             >
               Resume
@@ -128,7 +128,7 @@ export function Navbar() {
                 className="btn btn-primary w-full text-center text-sm font-semibold py-2.5"
                 href="/resume/tanmay-resume.pdf"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
               >
                 Download Resume
