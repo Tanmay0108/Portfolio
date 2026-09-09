@@ -87,7 +87,7 @@ export function About() {
 
           <div className="mt-6 space-y-3">
             <p className="muted max-w-xl text-base sm:text-lg leading-relaxed">
-              I'm Tanmay, a final-year Computer Engineering student who enjoys turning messy real-world problems into practical AI, data, and backend systems.
+              I'm Tanmay Potnurwar, a final-year Computer Engineering student who enjoys turning messy real-world problems into practical AI, data, and backend systems.
             </p>
             <p className="muted max-w-xl text-sm sm:text-base leading-relaxed">
               I build systems across RAG, NLP, machine learning, analytics, and backend APIs—focusing on grounded context, reliable data flow, and clean architecture.
@@ -394,8 +394,8 @@ export function Skills() {
               i < 3
                 ? "col-span-1 md:col-span-1 lg:col-span-2"
                 : i === 4
-                ? "col-span-1 md:col-span-2 lg:col-span-3"
-                : "col-span-1 md:col-span-1 lg:col-span-3";
+                  ? "col-span-1 md:col-span-2 lg:col-span-3"
+                  : "col-span-1 md:col-span-1 lg:col-span-3";
 
             return (
               <Reveal
@@ -478,9 +478,8 @@ function ProjectCard({
 
   return (
     <article
-      className={`card group flex h-full flex-col justify-between overflow-hidden transition-all duration-200 hover:-translate-y-1 ${
-        isFlagship ? "ring-1 ring-[var(--accent)]/40 shadow-lg" : ""
-      }`}
+      className={`card group flex h-full flex-col justify-between overflow-hidden transition-all duration-200 hover:-translate-y-1 ${isFlagship ? "ring-1 ring-[var(--accent)]/40 shadow-lg" : ""
+        }`}
     >
       <div>
         {/* Project Thumbnail Image */}
@@ -671,7 +670,9 @@ const credentialsList: Credential[] = [
     description:
       "Professional accreditation in agentic architecture, LLM orchestration frameworks, and autonomous multi-agent systems design on enterprise cloud infrastructure.",
     icon: <Award size={18} />,
-    status: "View certificate",
+    actionLabel: "View certificate ↗",
+    href: "https://drive.google.com/file/d/191eQ06L5n4pB9r0d8ZpY-3n0u2H-q9z4/view?usp=sharing",
+    ariaLabel: "Open Oracle Agentic AI Foundations Associate certificate in Google Drive (opens in a new tab)",
   },
 ];
 
