@@ -521,7 +521,7 @@ function ProjectCard({
             )}
           </div>
 
-          <h3 className="mt-2 text-lg sm:text-xl font-bold tracking-tight text-[var(--text)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+          <h3 className="mt-2 text-lg sm:text-xl font-bold tracking-tight text-[var(--text)] transition-colors duration-200 group-hover:text-[var(--accent-hover)]">
             {project.title}
           </h3>
 
@@ -867,7 +867,7 @@ export function Footer() {
             href="https://github.com/Tanmay0108"
             target="_blank"
             rel="noopener noreferrer"
-            className="muted hover:text-[var(--accent)] transition-colors"
+            className="muted hover:text-[var(--accent-hover)] transition-colors"
           >
             GitHub
           </a>
@@ -875,7 +875,7 @@ export function Footer() {
             href="https://www.linkedin.com/in/tanmay-potnurwar-a76745357/"
             target="_blank"
             rel="noopener noreferrer"
-            className="muted hover:text-[var(--accent)] transition-colors"
+            className="muted hover:text-[var(--accent-hover)] transition-colors"
           >
             LinkedIn
           </a>

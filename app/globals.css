@@ -2,26 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root, .dark {
-  --bg: #0D0D12;
-  --surface: #17171F;
-  --surface-raised: #1E1E28;
-  --text: #F4F1EB;
-  --muted: #A6A4B0;
-  --line: #2A2A35;
-  --accent: #8B87FF;
-  --accent-soft: #252540;
-}
-
-.light {
-  --bg: #f4f1eb;
-  --surface: #fffdfa;
-  --surface-raised: #ffffff;
-  --text: #17171c;
-  --muted: #696875;
-  --line: #dbd7cf;
-  --accent: #585cc7;
-  --accent-soft: #e9e9ff;
+:root, .dark, .light {
+  --bg: #F4F1EA;
+  --surface: #FBF9F4;
+  --surface-raised: #ECE7DD;
+  --text: #111111;
+  --muted: #555555;
+  --line: #D9D2C5;
+  --accent: #F2A900;
+  --accent-hover: #D88900;
+  --accent-soft: #FBF2DC;
 }
 
 * { box-sizing: border-box; }
@@ -104,8 +94,9 @@ button { font: inherit; cursor: pointer; }
   border-color: var(--text);
 }
 .btn-primary:hover {
-  background: #ffffff;
-  border-color: #ffffff;
+  background: #222222;
+  border-color: #222222;
+  color: var(--bg);
 }
 
 .icon-link {
@@ -270,7 +261,7 @@ button { font: inherit; cursor: pointer; }
 .ecosystem-node:hover, .ecosystem-node.is-hovered {
   transform: translateY(-3px) scale(1.08)!important;
   border-color: var(--accent)!important;
-  color: #FFFFFF!important;
+  color: var(--text)!important;
   box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 30%, transparent)!important;
   z-index: 10!important;
 }

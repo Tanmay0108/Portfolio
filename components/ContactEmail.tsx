@@ -127,7 +127,7 @@ export function FooterEmailLink() {
         href={GMAIL_COMPOSE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="muted hover:text-[var(--accent)] transition-colors"
+        className="muted hover:text-[var(--accent-hover)] transition-colors"
         aria-label="Email Tanmay via Gmail (opens in new tab)"
       >
         Email
@@ -137,7 +137,7 @@ export function FooterEmailLink() {
         onClick={handleCopy}
         title="Copy email to clipboard"
         aria-label="Copy email address to clipboard"
-        className="text-xs muted hover:text-[var(--accent)] transition-colors p-0.5"
+        className="text-xs muted hover:text-[var(--accent-hover)] transition-colors p-0.5"
       >
         {copied ? (
           <span className="text-[var(--accent)] text-[0.72rem] font-medium">Copied!</span>
