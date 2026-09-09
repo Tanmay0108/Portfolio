@@ -11,6 +11,10 @@ import {
   Server,
   Terminal,
   MapPin,
+  FileText,
+  FileCheck,
+  ExternalLink,
+  Calendar,
 } from "lucide-react";
 import { skillGroups } from "@/data/technologies";
 import { projects, type Project } from "@/data/projects";
@@ -120,6 +124,232 @@ export function About() {
   );
 }
 
+const internshipTechs = [
+  "Python",
+  "Gemini",
+  "Groq",
+  "Mistral",
+  "LangChain",
+  "ChromaDB",
+  "Ollama",
+  "RAG",
+  "GitHub",
+];
+
+const keyContributions = [
+  "Built prompt-engineering workflows using Gemini, Groq, and Mistral for structured parameter extraction, achieving 90% accuracy.",
+  "Developed document-processing workflows combining OCR, LLM extraction, and structured data generation.",
+  "Contributed to RAG and prompt-engineering workflows that improved the reliability of AI-assisted document analysis.",
+  "Designed a hybrid Static + Dynamic knowledge base in ChromaDB with metadata-based retrieval and structure-aware semantic chunking.",
+];
+
+export function Experience() {
+  return (
+    <section id="experience" className="section">
+      <div className="shell">
+        <Reveal>
+          <p className="eyebrow">02 — Experience</p>
+          <h2 className="display mt-3.5 text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+            Professional experience,
+            <br />
+            applied to real systems.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.06} className="mt-10 sm:mt-12">
+          <div className="card overflow-hidden transition-all duration-300 hover:border-opacity-80">
+            {/* Header / Role Info */}
+            <div
+              className="p-6 sm:p-8 lg:p-10 border-b"
+              style={{
+                borderColor: "var(--line)",
+                background: "color-mix(in srgb, var(--surface-raised) 40%, transparent)",
+              }}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text)]">
+                    AI Developer Intern
+                  </h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-2.5 text-sm sm:text-base font-semibold">
+                    <span style={{ color: "var(--accent)" }}>Inew Technologies</span>
+                    <span className="text-[var(--line)] hidden sm:inline">•</span>
+                    <span className="text-xs sm:text-sm font-medium text-[var(--muted)]">
+                      AI · Document Intelligence · RAG · Backend
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-semibold uppercase tracking-wider"
+                    style={{
+                      borderColor: "var(--line)",
+                      background: "var(--surface)",
+                      color: "var(--text)",
+                    }}
+                  >
+                    <Calendar size={13} style={{ color: "var(--accent)" }} />
+                    Feb – May 2026
+                  </span>
+                </div>
+              </div>
+
+              <p className="muted mt-5 max-w-4xl text-base sm:text-lg leading-relaxed text-[var(--text)]">
+                Engineered an enterprise document processing pipeline for 100+ page documents, combining OCR, LLM-powered extraction, and AI-based verification. Architected and implemented core Python components for vector retrieval, knowledge-base management, and LLM integration workflows.
+              </p>
+
+              <p className="mt-3 text-xs text-[var(--muted)] flex items-center gap-1.5">
+                <span
+                  className="h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: "var(--accent)" }}
+                />
+                <span>Collaborated with a 4-member engineering team through GitHub.</span>
+              </p>
+            </div>
+
+            {/* Grid Layout: Contributions on Left, Supporting Context on Right */}
+            <div className="p-6 sm:p-8 lg:p-10 grid gap-8 lg:gap-12 lg:grid-cols-[1.25fr_.75fr]">
+              {/* Left Column: Key Contributions */}
+              <div>
+                <p className="eyebrow !text-[0.68rem] tracking-wider mb-5">
+                  Key Contributions
+                </p>
+                <ul className="space-y-4">
+                  {keyContributions.map((point, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 text-sm sm:text-base leading-relaxed text-[var(--muted)]"
+                    >
+                      <span
+                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[0.68rem] font-bold mt-0.5"
+                        style={{
+                          borderColor: "var(--line)",
+                          background: "var(--surface-raised)",
+                          color: "var(--accent)",
+                        }}
+                      >
+                        {idx + 1}
+                      </span>
+                      <span className="flex-1 text-[var(--text)] font-normal">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right Column: Impact, Tech Stack, Selected Project, Documentation */}
+              <div className="flex flex-col gap-6">
+                {/* Impact Area */}
+                <div
+                  className="p-5 rounded-2xl border"
+                  style={{
+                    borderColor: "var(--line)",
+                    background: "var(--surface-raised)",
+                  }}
+                >
+                  <p className="eyebrow !text-[0.65rem] tracking-wider">Impact</p>
+                  <p className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text)]">
+                    80–90%
+                  </p>
+                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1 font-medium leading-relaxed">
+                    Automation of repetitive verification work
+                  </p>
+                </div>
+
+                {/* Technologies */}
+                <div>
+                  <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
+                    Technologies
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {internshipTechs.map((tech) => (
+                      <div key={tech} className="skill-chip group/chip text-xs !py-1 !px-2.5">
+                        <TechIcon
+                          name={tech}
+                          size={15}
+                          className="transition-transform duration-200 group-hover/chip:scale-110"
+                        />
+                        <span>{tech}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Selected Internship Project */}
+                <div className="pt-5 border-t" style={{ borderColor: "var(--line)" }}>
+                  <p className="eyebrow !text-[0.65rem] tracking-wider">
+                    Selected Internship Project
+                  </p>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <h4 className="text-base sm:text-lg font-bold text-[var(--text)]">Iverix</h4>
+                    <Link
+                      href="/projects/iverix"
+                      className="btn btn-primary !py-1.5 !px-3 text-xs group/link inline-flex items-center gap-1.5"
+                    >
+                      <span>View case study</span>
+                      <ArrowRight
+                        size={13}
+                        className="transition-transform duration-200 group-hover/link:translate-x-1"
+                      />
+                    </Link>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 leading-relaxed">
+                    AI-powered document auditing and verification system combining structured extraction, semantic retrieval, and LLM-based analysis.
+                  </p>
+                </div>
+
+                {/* Internship Documentation */}
+                <div className="pt-5 border-t" style={{ borderColor: "var(--line)" }}>
+                  <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
+                    Internship Documentation
+                  </p>
+                  <div className="flex flex-wrap gap-2.5">
+                    <a
+                      href="https://drive.google.com/file/d/1A0O6aAEV9iOFqble0pjP3a3HgsIB0ALx/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open offer letter in Google Drive (opens in a new tab)"
+                      className="btn text-xs !py-2 !px-3.5 group/doc"
+                    >
+                      <FileText size={14} style={{ color: "var(--accent)" }} />
+                      <span>Offer Letter</span>
+                      <ExternalLink
+                        size={12}
+                        className="text-[var(--muted)] transition-transform duration-200 group-hover/doc:translate-x-0.5 group-hover/doc:-translate-y-0.5"
+                      />
+                    </a>
+                    <a
+                      href="https://drive.google.com/file/d/10oOSyLFM2UfJ-GrQUWQtU4nsPaldwGtr/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open internship certificate in Google Drive (opens in a new tab)"
+                      className="btn text-xs !py-2 !px-3.5 group/doc"
+                    >
+                      <FileCheck size={14} style={{ color: "var(--accent)" }} />
+                      <span>Internship Certificate</span>
+                      <ExternalLink
+                        size={12}
+                        className="text-[var(--muted)] transition-transform duration-200 group-hover/doc:translate-x-0.5 group-hover/doc:-translate-y-0.5"
+                      />
+                    </a>
+                  </div>
+                  <p className="text-[0.72rem] text-[var(--muted)] mt-3 leading-normal flex items-center gap-1.5">
+                    <span
+                      className="h-1.5 w-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: "var(--accent)" }}
+                    />
+                    <span>Production-ready system deployed and actively maintained.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 const categoryIcons: Record<string, React.ReactNode> = {
   "AI / Machine Learning": <Brain size={18} />,
   "NLP / Generative AI": <Sparkles size={18} />,
@@ -141,7 +371,7 @@ export function Skills() {
     <section id="skills" className="section">
       <div className="shell">
         <Reveal>
-          <p className="eyebrow">02 — Capabilities</p>
+          <p className="eyebrow">03 — Capabilities</p>
           <div className="mt-3.5 flex flex-wrap items-end justify-between gap-5">
             <h2 className="display text-4xl sm:text-5xl lg:text-6xl tracking-tight">
               A focused technical<br />toolkit.
@@ -267,7 +497,7 @@ function ProjectCard({
             <p className="eyebrow !text-[0.68rem]">{project.category}</p>
             {isFlagship && (
               <span
-                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider border"
+                className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider border"
                 style={{
                   borderColor: "var(--accent)",
                   color: "var(--accent)",
@@ -346,7 +576,7 @@ export function Projects() {
     <section id="projects" className="section">
       <div className="shell">
         <Reveal>
-          <p className="eyebrow">03 — Selected work</p>
+          <p className="eyebrow">04 — Selected work</p>
           <h2 className="display mt-3.5 text-4xl sm:text-5xl lg:text-6xl tracking-tight">
             Proof, not promises.
           </h2>
@@ -405,7 +635,7 @@ export function Contact() {
           <div className="grid-pattern absolute inset-0" />
           <div className="relative grid gap-8 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
             <div>
-              <p className="eyebrow">04 — Contact</p>
+              <p className="eyebrow">05 — Contact</p>
               <h2 className="display mt-3.5 text-3xl sm:text-5xl lg:text-5xl tracking-tight">
                 Let's build something useful.
               </h2>

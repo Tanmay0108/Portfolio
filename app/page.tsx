@@ -1,6 +1,13 @@
 import { ArrowDown, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { About, Contact, Footer, Projects, Skills } from "@/components/Sections";
+import {
+  About,
+  Experience,
+  Contact,
+  Footer,
+  Projects,
+  Skills,
+} from "@/components/Sections";
 import { TechEcosystem, TechStackFlow } from "@/components/TechStackFlow";
 import { Reveal } from "@/components/Reveal";
 import { BackToTop } from "@/components/BackToTop";
@@ -103,6 +110,7 @@ export default function Home() {
 
       <TechStackFlow />
       <About />
+      <Experience />
       <Skills />
       <Projects />
       <Contact />

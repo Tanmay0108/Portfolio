@@ -58,6 +58,63 @@ export function TechIcon({ name, className = "", size = 20 }: TechIconProps) {
   }
 
   // Official vector icons for specific technologies without PNGs in logos/
+  if (normalized === "gemini") {
+    return (
+      <span
+        className={`inline-flex items-center justify-center shrink-0 ${className}`}
+        style={{ width: size, height: size }}
+      >
+        <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" style={{ color: "#8B87FF" }} aria-hidden="true">
+          <path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.373 12 12 0-6.627 5.373-12 12-12-6.627 0-12-5.373-12-12z" />
+        </svg>
+      </span>
+    );
+  }
+
+  if (normalized === "groq") {
+    return (
+      <span
+        className={`inline-flex items-center justify-center shrink-0 ${className}`}
+        style={{ width: size, height: size }}
+      >
+        <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" style={{ color: "#F55036" }} aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2.5" />
+          <path d="M12 7v5l3.5 3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        </svg>
+      </span>
+    );
+  }
+
+  if (normalized === "mistral") {
+    return (
+      <span
+        className={`inline-flex items-center justify-center shrink-0 ${className}`}
+        style={{ width: size, height: size }}
+      >
+        <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" style={{ color: "#FF7000" }} aria-hidden="true">
+          <path d="M3 4h3.5v5H3V4zm14.5 0H21v5h-3.5V4zM3 10.5h10.5v3H3v-3zm7 0H21v3h-3.5v-3zM3 15h3.5v5H3v-5zm14.5 0H21v5h-3.5v-5z" />
+        </svg>
+      </span>
+    );
+  }
+
+  if (normalized === "chromadb" || normalized === "chroma") {
+    return (
+      <span
+        className={`inline-flex items-center justify-center shrink-0 ${className}`}
+        style={{ width: size, height: size }}
+      >
+        <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" style={{ color: "#F59E0B" }} aria-hidden="true">
+          <circle cx="6" cy="6" r="3.5" fill="#EF4444" />
+          <circle cx="18" cy="6" r="3.5" fill="#3B82F6" />
+          <circle cx="6" cy="18" r="3.5" fill="#10B981" />
+          <circle cx="18" cy="18" r="3.5" fill="#8B87FF" />
+          <path d="M6 9.5v5M18 9.5v5M9.5 6h5M9.5 18h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </span>
+    );
+  }
+
   if (normalized === "git") {
     return (
       <span
