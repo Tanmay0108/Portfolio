@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Copy, Mail, Phone } from "lucide-react";
 
 export const EMAIL_ADDRESS = "tanmaypotnurwar8@gmail.com";
 export const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`;
+export const PHONE_NUMBER = "+91 8623932184";
+export const PHONE_RAW = "8623932184";
+export const PHONE_TEL_URL = `tel:+918623932184`;
 
 export function ContactEmailActions() {
   const [copied, setCopied] = useState(false);
@@ -59,6 +62,48 @@ export function ContactEmailActions() {
         )}
       </button>
     </>
+  );
+}
+
+export function ContactPhoneActions() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(PHONE_RAW);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = PHONE_RAW;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="btn"
+      aria-label="Copy phone number to clipboard"
+    >
+      {copied ? (
+        <>
+          <Check size={16} className="text-[var(--accent)]" />
+          <span className="text-[var(--accent)]">Phone copied!</span>
+        </>
+      ) : (
+        <>
+          <Phone size={15} />
+          <span>Copy phone</span>
+        </>
+      )}
+    </button>
   );
 }
 

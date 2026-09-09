@@ -18,12 +18,19 @@ import {
   Trophy,
   BookOpen,
   Award,
+  Phone,
 } from "lucide-react";
 import { skillGroups } from "@/data/technologies";
 import { projects, type Project } from "@/data/projects";
 import { Reveal } from "./Reveal";
 import { TechIcon } from "./TechIcon";
-import { ContactEmailActions, FooterEmailLink, EMAIL_ADDRESS } from "./ContactEmail";
+import {
+  ContactEmailActions,
+  FooterEmailLink,
+  EMAIL_ADDRESS,
+  PHONE_NUMBER,
+  PHONE_TEL_URL,
+} from "./ContactEmail";
 
 const projectAssets: Record<string, string> = {
   "niyam-drishti": "/projects/niyam-drishti.png",
@@ -783,17 +790,42 @@ export function Contact() {
                 I'm open to internship and full-time opportunities across AI, data science, generative AI, and backend engineering.
               </p>
 
-              {/* Visibly displayed email address */}
-              <div className="mt-5 flex items-center gap-2 text-sm font-mono text-[var(--accent)]">
-                <span className="text-xs uppercase tracking-wider text-[var(--muted)] font-sans">
-                  Email:
-                </span>
-                <span className="selection:bg-accent">{EMAIL_ADDRESS}</span>
+              {/* Visibly displayed contact metadata: Email and Phone */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono text-[var(--accent)]">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs uppercase tracking-wider text-[var(--muted)] font-sans">
+                    Email:
+                  </span>
+                  <a
+                    href={`mailto:${EMAIL_ADDRESS}`}
+                    className="hover:underline transition-colors select-all"
+                  >
+                    {EMAIL_ADDRESS}
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs uppercase tracking-wider text-[var(--muted)] font-sans">
+                    Phone:
+                  </span>
+                  <a
+                    href={PHONE_TEL_URL}
+                    className="hover:underline transition-colors select-all"
+                  >
+                    {PHONE_NUMBER}
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 lg:justify-end">
+            <div className="flex flex-wrap items-center gap-2.5 lg:justify-end">
               <ContactEmailActions />
+              <a
+                className="btn"
+                href={PHONE_TEL_URL}
+                aria-label="Call Tanmay at +91 8623932184"
+              >
+                <Phone size={15} /> <span>Call</span>
+              </a>
               <a
                 className="btn"
                 href="https://www.linkedin.com/in/tanmay-potnurwar-a76745357/"
