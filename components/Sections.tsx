@@ -15,6 +15,9 @@ import {
   FileCheck,
   ExternalLink,
   Calendar,
+  Trophy,
+  BookOpen,
+  Award,
 } from "lucide-react";
 import { skillGroups } from "@/data/technologies";
 import { projects, type Project } from "@/data/projects";
@@ -626,6 +629,143 @@ export function Projects() {
   );
 }
 
+type Credential = {
+  category: "COMPETITION" | "RESEARCH" | "CERTIFICATION";
+  title: string;
+  context: string;
+  description: string;
+  icon: React.ReactNode;
+  actionLabel?: string;
+  href?: string;
+  status?: string;
+  ariaLabel?: string;
+};
+
+const credentialsList: Credential[] = [
+  {
+    category: "COMPETITION",
+    title: "SIH 2025 Finalist",
+    context: "Smart India Hackathon · 2025",
+    description:
+      "National finalist in Smart India Hackathon 2025, selected among top engineering teams nationwide for developing innovative software solutions to real-world government challenges.",
+    icon: <Trophy size={18} />,
+    actionLabel: "View certificate ↗",
+    href: "https://drive.google.com/file/d/166ZoKOq_rZzXkYnR1oChxj5QRFTW20Mh/view?usp=sharing",
+    ariaLabel: "Open SIH 2025 Finalist certificate in Google Drive (opens in a new tab)",
+  },
+  {
+    category: "RESEARCH",
+    title: "HandSign Translator Bridging the Communication Gap for ISL Users",
+    context: "Research Paper · Nov 2025",
+    description:
+      "Engineered a computer vision and deep learning translation system mapping Indian Sign Language gestures to text and speech, addressing real-time communication accessibility.",
+    icon: <BookOpen size={18} />,
+    actionLabel: "View certificate ↗",
+    href: "https://drive.google.com/file/d/1Lpx2EcGzPzy1OkgvhvNMkfcpaAtFfw4O/view?usp=sharing",
+    ariaLabel: "Open HandSign Translator certificate in Google Drive (opens in a new tab)",
+  },
+  {
+    category: "CERTIFICATION",
+    title: "Oracle Agentic AI Foundations Associate",
+    context: "Oracle",
+    description:
+      "Professional accreditation in agentic architecture, LLM orchestration frameworks, and autonomous multi-agent systems design on enterprise cloud infrastructure.",
+    icon: <Award size={18} />,
+    status: "Verification link coming soon",
+  },
+];
+
+function CredentialCard({ item }: { item: Credential }) {
+  return (
+    <article className="card group flex h-full flex-col justify-between p-6 sm:p-7 transition-all duration-200 hover:-translate-y-1 hover:border-opacity-80">
+      <div>
+        <div
+          className="flex items-start justify-between gap-3 pb-4 border-b"
+          style={{ borderColor: "var(--line)" }}
+        >
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-xl border shrink-0 transition-transform duration-200 group-hover:scale-105"
+            style={{
+              borderColor: "var(--line)",
+              background: "var(--surface-raised)",
+              color: "var(--accent)",
+            }}
+          >
+            {item.icon}
+          </span>
+          <span
+            className="text-[0.65rem] font-bold tracking-wider px-2.5 py-0.5 rounded-full border uppercase shrink-0"
+            style={{
+              borderColor: "var(--accent)",
+              color: "var(--accent)",
+              background: "color-mix(in srgb, var(--accent) 10%, transparent)",
+            }}
+          >
+            {item.category}
+          </span>
+        </div>
+
+        <div className="mt-4">
+          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-[var(--text)] transition-colors duration-200 group-hover:text-[var(--accent)] leading-snug">
+            {item.title}
+          </h3>
+          <p className="mt-1 text-xs font-semibold text-[var(--muted)]">
+            {item.context}
+          </p>
+          <p className="muted mt-3 text-xs sm:text-sm leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 pt-4 border-t" style={{ borderColor: "var(--line)" }}>
+        {item.href ? (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.ariaLabel}
+            className="btn btn-primary text-xs !py-2 !px-3.5 group/btn inline-flex items-center gap-1.5"
+          >
+            <span>{item.actionLabel}</span>
+          </a>
+        ) : (
+          <div className="inline-flex items-center gap-2 text-xs text-[var(--muted)] font-medium py-1.5 px-3 rounded-lg border border-dashed border-[var(--line)] bg-[var(--surface-raised)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--muted)]/60" />
+            <span>{item.status}</span>
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export function Credentials() {
+  return (
+    <section id="credentials" className="section">
+      <div className="shell">
+        <Reveal>
+          <p className="eyebrow">05 — Credentials & Recognition</p>
+          <h2 className="display mt-3 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+            Evidence beyond the projects.
+          </h2>
+          <p className="muted mt-3 max-w-2xl text-sm sm:text-base leading-relaxed">
+            Competitions, research, and certifications that complement the work above.
+          </p>
+        </Reveal>
+
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {credentialsList.map((item, idx) => (
+            <Reveal key={item.title} delay={idx * 0.08} className="h-full">
+              <CredentialCard item={item} />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Contact() {
   return (
     <section id="contact" className="section">
@@ -634,7 +774,7 @@ export function Contact() {
           <div className="grid-pattern absolute inset-0" />
           <div className="relative grid gap-8 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
             <div>
-              <p className="eyebrow">05 — Contact</p>
+              <p className="eyebrow">06 — Contact</p>
               <h2 className="display mt-3 text-2xl sm:text-4xl lg:text-[2.65rem] tracking-tight">
                 Let's build something useful.
               </h2>

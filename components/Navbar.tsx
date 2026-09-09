@@ -106,9 +106,11 @@ export function Navbar() {
 
   return (
     <header
-      className="w-full border-b transition-colors duration-200"
+      className="sticky top-0 z-50 w-full border-b transition-colors duration-200"
       style={{
-        backgroundColor: "var(--bg)",
+        backgroundColor: "color-mix(in srgb, var(--bg) 85%, transparent)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
         borderColor: "var(--line)",
       }}
     >

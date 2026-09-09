@@ -7,6 +7,7 @@ import {
   Footer,
   Projects,
   Skills,
+  Credentials,
 } from "@/components/Sections";
 import { TechEcosystem, TechStackFlow } from "@/components/TechStackFlow";
 import { Reveal } from "@/components/Reveal";
@@ -126,6 +127,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <Projects />
+      <Credentials />
       <Contact />
       <Footer />
       <BackToTop />
