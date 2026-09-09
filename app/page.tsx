@@ -13,22 +13,27 @@ export default function Home() {
   return (
     <main id="top" className="page">
       <Navbar />
+
+      {/* Hero Section */}
       <section className="relative">
         <div className="grid-pattern absolute inset-x-0 top-0 h-[620px]" />
-        <div className="shell relative grid min-h-[640px] items-center gap-12 py-16 sm:py-20 lg:py-24 lg:grid-cols-[1.05fr_.95fr]">
+        <div className="shell relative grid min-h-[600px] items-center gap-10 py-14 sm:py-18 lg:py-22 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <Reveal>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2.5">
                 <p className="eyebrow">AI · DATA SCIENCE · GENAI · BACKEND</p>
                 <div className="inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-wider text-[var(--muted)]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: "var(--accent)" }}
+                  />
                   <span>Open to internships & full-time opportunities</span>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal delay={0.08}>
-              <h1 className="display mt-6 text-4xl sm:text-6xl lg:text-[4.15rem] xl:text-[4.85rem] leading-[1.02] tracking-tight">
+            <Reveal delay={0.06}>
+              <h1 className="display mt-5 text-4xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.04] tracking-tight">
                 Hi, I'm Tanmay.
                 <br />
                 <span style={{ color: "var(--accent)" }}>
@@ -37,27 +42,29 @@ export default function Home() {
               </h1>
             </Reveal>
 
-            <Reveal delay={0.16}>
-              <p className="muted mt-7 max-w-xl text-base sm:text-lg lg:text-xl leading-relaxed">
-                Final-year Computer Engineering student building practical systems with AI, data, and backend technologies. Focused on Data Science, NLP, Generative AI, analytics, and automation.
+            <Reveal delay={0.12}>
+              <p className="muted mt-6 max-w-xl text-base sm:text-lg lg:text-xl leading-relaxed">
+                I build practical AI, data, and backend systems—from RAG pipelines and NLP applications to analytics workflows and APIs. Final-year Computer Engineering student focused on turning complex technical problems into dependable, production-ready solutions.
               </p>
             </Reveal>
 
-            <Reveal delay={0.24} className="mt-9 flex flex-wrap gap-3">
+            <Reveal delay={0.18} className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="btn btn-primary">
-                View my projects <ArrowRight size={17} />
+                <span>View my projects</span>
+                <ArrowRight size={17} />
               </a>
               <a
                 href="/resume/tanmay-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn"
+                className="btn group/resume"
               >
-                Download resume <ArrowDown size={17} />
+                <span>Download resume</span>
+                <ArrowDown size={17} className="transition-transform duration-200 group-hover/resume:translate-y-0.5" />
               </a>
             </Reveal>
 
-            <Reveal delay={0.3} className="mt-9 flex gap-5">
+            <Reveal delay={0.24} className="mt-8 flex gap-5">
               <a
                 href={github}
                 target="_blank"
@@ -88,7 +95,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.2} className="hidden lg:block">
+          <Reveal delay={0.15} className="hidden lg:block">
             <TechEcosystem />
           </Reveal>
         </div>

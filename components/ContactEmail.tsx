@@ -48,8 +48,8 @@ export function ContactEmailActions() {
       >
         {copied ? (
           <>
-            <Check size={16} className="text-emerald-400" />
-            <span className="text-emerald-400">Email copied!</span>
+            <Check size={16} className="text-[var(--accent)]" />
+            <span className="text-[var(--accent)]">Email copied!</span>
           </>
         ) : (
           <>
@@ -95,7 +95,7 @@ export function FooterEmailLink() {
         className="text-xs muted hover:text-[var(--accent)] transition-colors p-0.5"
       >
         {copied ? (
-          <span className="text-emerald-400 text-[0.72rem] font-medium">Copied!</span>
+          <span className="text-[var(--accent)] text-[0.72rem] font-medium">Copied!</span>
         ) : (
           <Copy size={13} />
         )}

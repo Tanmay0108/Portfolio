@@ -4,28 +4,54 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
-const links = ["About", "Skills", "Projects", "Contact"];
+const links = [
+  { id: "about", label: "About" },
+  { id: "skills", label: "Capabilities" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("top");
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
-    const sections = ["top", ...links.map((link) => link.toLowerCase())]
-      .map((id) => document.getElementById(id))
-      .filter((section): section is HTMLElement => Boolean(section));
+    const handleScroll = () => {
+      // If visitor is near the top (in Hero section), no navigation link should appear active
+      if (window.scrollY < 260) {
+        setActive("");
+        return;
+      }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-25% 0px -60% 0px" }
-    );
+      // If scrolled near bottom of page, activate Contact
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 100
+      ) {
+        setActive("contact");
+        return;
+      }
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      // Check section bounding rects
+      let current = "";
+      for (const { id } of links) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Active if the top of section is within upper viewport area
+          if (rect.top <= 200 && rect.bottom >= 120) {
+            current = id;
+          }
+        }
+      }
+
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -46,8 +72,7 @@ export function Navbar() {
     };
   }, [open]);
 
-  const navLink = (label: string, mobile = false) => {
-    const id = label.toLowerCase();
+  const renderNavLink = (id: string, label: string, mobile = false) => {
     const isActive = active === id;
     return (
       <a
@@ -64,7 +89,7 @@ export function Navbar() {
     <header
       className="sticky top-0 z-50 backdrop-blur-md transition-colors duration-200"
       style={{
-        backgroundColor: "color-mix(in srgb, var(--bg) 88%, transparent)",
+        backgroundColor: "color-mix(in srgb, var(--bg) 85%, transparent)",
         borderBottom: "1px solid var(--line)",
       }}
     >
@@ -76,8 +101,8 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-7 md:flex">
           <nav aria-label="Primary navigation" className="flex items-center gap-6">
-            {links.map((link) => (
-              <span key={link}>{navLink(link)}</span>
+            {links.map(({ id, label }) => (
+              <span key={id}>{renderNavLink(id, label)}</span>
             ))}
           </nav>
           <div className="flex items-center gap-3 pl-2 border-l" style={{ borderColor: "var(--line)" }}>
@@ -85,7 +110,7 @@ export function Navbar() {
               href="/resume/tanmay-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary !min-h-[38px] !py-2 !px-4 text-xs font-semibold uppercase tracking-wider"
+              className="btn btn-primary !min-h-[38px] !py-2 !px-4 text-xs font-semibold uppercase tracking-wider transition-all duration-200 hover:brightness-110"
             >
               Resume
             </a>
@@ -120,8 +145,8 @@ export function Navbar() {
           }}
         >
           <div className="shell flex flex-col gap-3">
-            {links.map((link) => (
-              <span key={link}>{navLink(link, true)}</span>
+            {links.map(({ id, label }) => (
+              <span key={id}>{renderNavLink(id, label, true)}</span>
             ))}
             <div className="mt-3 pt-4 border-t flex flex-col gap-3" style={{ borderColor: "var(--line)" }}>
               <a
@@ -140,4 +165,3 @@ export function Navbar() {
     </header>
   );
 }
-
