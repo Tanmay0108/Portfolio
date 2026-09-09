@@ -41,18 +41,14 @@ export default function Home() {
                     style={{ backgroundColor: "var(--accent)" }}
                   />
                   <span className="text-[0.68rem] font-bold uppercase tracking-wider text-[var(--text)]">
-                    Available for opportunities
-                  </span>
-                  <span className="text-[var(--line)] text-xs leading-none select-none">•</span>
-                  <span className="text-[0.72rem] font-medium text-[var(--muted)]">
-                    Internships · Full-time
+                    Available for internships & full-time roles
                   </span>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.06}>
-              <h1 className="display mt-5 text-4xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.06] tracking-tight">
+              <h1 className="display mt-5 text-4xl sm:text-6xl lg:text-[3.75rem] xl:text-[4.15rem] leading-[1.06] tracking-tight">
                 Hi, I'm Tanmay.
                 <br />
                 <span style={{ color: "var(--accent)" }}>

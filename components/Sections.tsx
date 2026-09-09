@@ -73,18 +73,10 @@ export function About() {
                 <br />
                 thoughtfully built.
               </h2>
-              {/* Profile location & availability metadata */}
-              <div className="mt-3.5 flex flex-wrap items-center gap-2.5 text-xs font-semibold text-[var(--muted)]">
+              {/* Profile location metadata */}
+              <div className="mt-3.5 flex items-center gap-2 text-xs font-semibold text-[var(--muted)]">
                 <span className="inline-flex items-center gap-1.5">
                   <MapPin size={13} style={{ color: "var(--accent)" }} /> Pune, India
-                </span>
-                <span className="text-[var(--line)]">•</span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span
-                    className="h-1.5 w-1.5 rounded-full"
-                    style={{ backgroundColor: "var(--accent)" }}
-                  />
-                  <span>Open to Internships & Full-Time</span>
                 </span>
               </div>
             </div>
@@ -206,79 +198,38 @@ export function Experience() {
               </p>
             </div>
 
-            {/* Content Body: Zone 2 (Contributions) and Zone 3 (Evidence) */}
+            {/* Content Body: Left (Contributions + Internship Project) and Right (Impact + Tech + Docs) */}
             <div className="p-6 sm:p-8 lg:p-10 grid gap-8 lg:gap-12 lg:grid-cols-[1.2fr_.8fr]">
-              {/* ZONE 2: Key Contributions */}
-              <div>
-                <p className="eyebrow !text-[0.68rem] tracking-wider mb-5 text-[var(--muted)]">
-                  Key Contributions
-                </p>
-                <ul className="space-y-4">
-                  {keyContributions.map((point, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3.5 text-sm sm:text-[0.94rem] leading-relaxed text-[var(--muted)]"
-                    >
-                      <span
-                        className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[0.68rem] font-bold mt-0.5"
-                        style={{
-                          borderColor: "var(--line)",
-                          background: "var(--surface-raised)",
-                          color: "var(--accent)",
-                        }}
-                      >
-                        {idx + 1}
-                      </span>
-                      <span className="flex-1 text-[var(--text)] font-normal">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* ZONE 3: Evidence (Impact, Technologies, Selected Project, Documentation) */}
-              <div className="flex flex-col gap-6">
-                {/* Visual Impact Metric - Prominent Anchor */}
-                <div
-                  className="p-5 sm:p-6 rounded-2xl border"
-                  style={{
-                    borderColor: "var(--line)",
-                    background: "var(--surface-raised)",
-                  }}
-                >
-                  <p className="eyebrow !text-[0.65rem] tracking-wider">Impact</p>
-                  <p className="mt-2 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[var(--text)]">
-                    80–90%
-                  </p>
-                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 font-medium leading-relaxed">
-                    Automation of repetitive verification work
-                  </p>
-                </div>
-
-                {/* Technologies and Focus */}
+              {/* LEFT COLUMN: Key Contributions + Internship Project */}
+              <div className="flex flex-col justify-between gap-8">
                 <div>
-                  <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
-                    Technologies
+                  <p className="eyebrow !text-[0.68rem] tracking-wider mb-5 text-[var(--muted)]">
+                    Key Contributions
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {internshipTechs.map((tech) => (
-                      <div key={tech} className="skill-chip group/chip text-xs !py-1 !px-2.5">
-                        <TechIcon
-                          name={tech}
-                          size={15}
-                          className="transition-transform duration-200 group-hover/chip:scale-110"
-                        />
-                        <span>{tech}</span>
-                      </div>
+                  <ul className="space-y-4">
+                    {keyContributions.map((point, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3.5 text-sm sm:text-[0.94rem] leading-relaxed text-[var(--muted)]"
+                      >
+                        <span
+                          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[0.68rem] font-bold mt-0.5"
+                          style={{
+                            borderColor: "var(--line)",
+                            background: "var(--surface-raised)",
+                            color: "var(--accent)",
+                          }}
+                        >
+                          {idx + 1}
+                        </span>
+                        <span className="flex-1 text-[var(--text)] font-normal">{point}</span>
+                      </li>
                     ))}
-                  </div>
-                  <div className="mt-2.5 flex items-center gap-1.5 text-[0.72rem] text-[var(--muted)]">
-                    <span className="font-semibold uppercase tracking-wider text-[0.65rem]">Focus:</span>
-                    <span>RAG · Document Intelligence · LLM Workflows</span>
-                  </div>
+                  </ul>
                 </div>
 
-                {/* Selected Internship Project */}
-                <div className="pt-5 border-t" style={{ borderColor: "var(--line)" }}>
+                {/* Selected Internship Project - Directly below Key Contributions */}
+                <div className="pt-6 border-t" style={{ borderColor: "var(--line)" }}>
                   <div className="flex items-center gap-2">
                     <span
                       className="text-[0.62rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded border"
@@ -291,8 +242,8 @@ export function Experience() {
                       Internship Project
                     </span>
                   </div>
-                  <div className="mt-2 flex items-center justify-between gap-2">
-                    <h4 className="text-lg font-bold text-[var(--text)]">Iverix</h4>
+                  <div className="mt-2.5 flex items-center justify-between gap-3">
+                    <h4 className="text-xl font-bold text-[var(--text)]">Iverix</h4>
                     <Link
                       href="/projects/iverix"
                       className="btn btn-primary !py-1.5 !px-3 text-xs group/link inline-flex items-center gap-1.5"
@@ -300,13 +251,58 @@ export function Experience() {
                       <span>View case study →</span>
                     </Link>
                   </div>
-                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[var(--muted)] mt-2 leading-relaxed">
                     AI-powered document auditing and verification system combining structured extraction, semantic retrieval, and LLM-based analysis.
                   </p>
                 </div>
+              </div>
+
+              {/* RIGHT COLUMN: Impact, Technologies, Focus, and Documentation */}
+              <div className="flex flex-col justify-between gap-6">
+                <div className="flex flex-col gap-6">
+                  {/* Visual Impact Metric - Prominent Anchor */}
+                  <div
+                    className="p-5 sm:p-6 rounded-2xl border"
+                    style={{
+                      borderColor: "var(--line)",
+                      background: "var(--surface-raised)",
+                    }}
+                  >
+                    <p className="eyebrow !text-[0.65rem] tracking-wider">Impact</p>
+                    <p className="mt-2 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[var(--text)]">
+                      80–90%
+                    </p>
+                    <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 font-medium leading-relaxed">
+                      Automation of repetitive verification work
+                    </p>
+                  </div>
+
+                  {/* Technologies and Focus */}
+                  <div>
+                    <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
+                      Technologies
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {internshipTechs.map((tech) => (
+                        <div key={tech} className="skill-chip group/chip text-xs !py-1 !px-2.5">
+                          <TechIcon
+                            name={tech}
+                            size={15}
+                            className="transition-transform duration-200 group-hover/chip:scale-110"
+                          />
+                          <span>{tech}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-3 flex items-center gap-1.5 text-[0.72rem] text-[var(--muted)]">
+                      <span className="font-semibold uppercase tracking-wider text-[0.65rem]">Focus:</span>
+                      <span>RAG · Document Intelligence · LLM Workflows</span>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Internship Documentation */}
-                <div className="pt-5 border-t" style={{ borderColor: "var(--line)" }}>
+                <div className="pt-6 border-t" style={{ borderColor: "var(--line)" }}>
                   <p className="eyebrow !text-[0.65rem] tracking-wider mb-2.5">
                     Internship Documentation
                   </p>
@@ -636,14 +632,14 @@ export function Contact() {
       <div className="shell">
         <Reveal className="card relative overflow-hidden p-7 sm:p-10 lg:p-12">
           <div className="grid-pattern absolute inset-0" />
-          <div className="relative grid gap-8 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
+          <div className="relative grid gap-8 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
             <div>
               <p className="eyebrow">05 — Contact</p>
               <h2 className="display mt-3 text-2xl sm:text-4xl lg:text-[2.65rem] tracking-tight">
                 Let's build something useful.
               </h2>
               <p className="muted mt-3.5 max-w-2xl text-sm sm:text-base leading-relaxed">
-                I'm currently open to internship and full-time opportunities in AI, Data Science, Generative AI, Data Analytics, and Backend Engineering.
+                I'm open to internship and full-time opportunities across AI, data science, generative AI, and backend engineering.
               </p>
 
               {/* Visibly displayed email address */}
@@ -655,7 +651,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 lg:justify-end">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 lg:justify-end">
               <ContactEmailActions />
               <a
                 className="btn"

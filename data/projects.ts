@@ -1,4 +1,9 @@
-export type ProjectCategory = "AI / ML" | "Data Analytics" | "GenAI & RAG" | "GenAI & Automation";
+export type ProjectCategory =
+  | "AI / ML"
+  | "Data Analytics"
+  | "GenAI & RAG"
+  | "GenAI & Automation"
+  | "NLP / Recommendation";
 
 export type Project = {
   slug: string;
@@ -24,6 +29,7 @@ export const projectCategories: ProjectCategory[] = [
   "GenAI & RAG",
   "AI / ML",
   "Data Analytics",
+  "NLP / Recommendation",
 ];
 
 export const projects: Project[] = [
@@ -160,7 +166,7 @@ export const projects: Project[] = [
   {
     slug: "movie-recommendation-system",
     title: "Movie Recommendation System",
-    category: "AI / ML",
+    category: "NLP / Recommendation",
     featured: false,
     image,
     tagline: "Fast content-based recommendations built from movie metadata.",

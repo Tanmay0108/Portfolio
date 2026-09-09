@@ -28,7 +28,7 @@ export function ContactEmailActions() {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <>
       <a
         className="btn btn-primary"
         href={GMAIL_COMPOSE_URL}
@@ -58,7 +58,7 @@ export function ContactEmailActions() {
           </>
         )}
       </button>
-    </div>
+    </>
   );
 }
 
