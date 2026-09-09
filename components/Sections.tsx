@@ -671,7 +671,7 @@ const credentialsList: Credential[] = [
     description:
       "Professional accreditation in agentic architecture, LLM orchestration frameworks, and autonomous multi-agent systems design on enterprise cloud infrastructure.",
     icon: <Award size={18} />,
-    status: "Verification link coming soon",
+    status: "View certificate",
   },
 ];
 
