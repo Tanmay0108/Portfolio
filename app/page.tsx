@@ -23,26 +23,36 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative">
-        <div className="grid-pattern absolute inset-x-0 top-0 h-[620px]" />
-        <div className="shell relative grid min-h-[600px] items-center gap-10 py-14 sm:py-18 lg:py-22 lg:grid-cols-[1.05fr_.95fr]">
+      <section className="relative pt-10 sm:pt-12 lg:pt-14">
+        <div className="grid-pattern absolute inset-x-0 top-0 h-[600px]" />
+        <div className="shell relative grid items-center gap-10 lg:gap-12 py-6 sm:py-8 lg:py-10 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <Reveal>
               <div className="flex flex-col gap-3">
                 <p className="eyebrow">AI · DATA SCIENCE · GENAI · BACKEND</p>
                 <div
-                  className="group/avail inline-flex w-fit items-center gap-2.5 rounded-full border px-3.5 py-1.5 transition-all duration-200 hover:border-[var(--accent)] hover:bg-[var(--surface-raised)] cursor-default"
+                  className="inline-flex flex-wrap items-center gap-2 rounded-full border px-3.5 py-1.5 transition-all duration-200 hover:border-[var(--accent)] hover:bg-[var(--surface-raised)] cursor-default select-none w-fit"
                   style={{
                     borderColor: "var(--line)",
                     backgroundColor: "color-mix(in srgb, var(--surface) 80%, transparent)",
                   }}
                 >
-                  <span
-                    className="availability-dot h-2 w-2 rounded-full shrink-0"
-                    style={{ backgroundColor: "var(--accent)" }}
-                  />
-                  <span className="text-[0.68rem] font-bold uppercase tracking-wider text-[var(--text)]">
-                    Available for internships & full-time roles
+                  <span className="relative flex h-2.5 w-2.5 items-center justify-center shrink-0">
+                    <span
+                      className="availability-dot absolute inline-flex h-full w-full rounded-full opacity-70"
+                      style={{ backgroundColor: "var(--accent)" }}
+                    />
+                    <span
+                      className="relative inline-flex rounded-full h-1.5 w-1.5"
+                      style={{ backgroundColor: "var(--accent)" }}
+                    />
+                  </span>
+                  <span className="font-mono text-[0.68rem] font-bold uppercase tracking-wider text-[var(--text)]">
+                    Available for opportunities
+                  </span>
+                  <span className="text-[var(--muted)] text-xs select-none">•</span>
+                  <span className="font-mono text-[0.68rem] text-[var(--muted)] font-medium">
+                    Internships · Full-time
                   </span>
                 </div>
               </div>
@@ -85,24 +95,24 @@ export default function Home() {
               </a>
             </Reveal>
 
-            <Reveal delay={0.24} className="mt-8 flex gap-5">
+            <Reveal delay={0.24} className="mt-8 flex items-center gap-3.5">
               <a
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Tanmay on GitHub"
+                aria-label="Tanmay on GitHub (opens in new tab)"
                 className="icon-link"
               >
-                <Github size={19} />
+                <Github size={20} />
               </a>
               <a
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Tanmay on LinkedIn"
+                aria-label="Tanmay on LinkedIn (opens in new tab)"
                 className="icon-link"
               >
-                <Linkedin size={19} />
+                <Linkedin size={20} />
               </a>
               <a
                 href={GMAIL_COMPOSE_URL}
@@ -111,7 +121,7 @@ export default function Home() {
                 aria-label="Email Tanmay via Gmail (opens compose in new tab)"
                 className="icon-link"
               >
-                <Mail size={19} />
+                <Mail size={20} />
               </a>
             </Reveal>
           </div>

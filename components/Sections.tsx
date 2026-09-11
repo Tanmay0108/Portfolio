@@ -26,6 +26,8 @@ import { Reveal } from "./Reveal";
 import { TechIcon } from "./TechIcon";
 import {
   ContactEmailActions,
+  EmailMeButton,
+  CopyEmailButton,
   FooterEmailLink,
   EMAIL_ADDRESS,
   PHONE_NUMBER,
@@ -55,12 +57,12 @@ const projectGithub: Record<string, string> = {
 export function About() {
   return (
     <section id="about" className="section">
-      <div className="shell grid gap-10 lg:gap-14 items-center lg:grid-cols-[1.25fr_.75fr]">
+      <div className="shell grid gap-8 lg:gap-12 items-center lg:grid-cols-[1.25fr_.75fr]">
         <Reveal>
-          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-7">
+          <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
             {/* Professional Headshot */}
             <div
-              className="relative shrink-0 overflow-hidden rounded-2xl border aspect-[4/5] w-32 sm:w-36 lg:w-40 transition-transform duration-300 hover:scale-[1.02]"
+              className="relative shrink-0 overflow-hidden rounded-2xl border aspect-[4/5] w-28 sm:w-32 lg:w-36 transition-transform duration-300 hover:scale-[1.02]"
               style={{
                 borderColor: "var(--line)",
                 backgroundColor: "var(--surface-raised)",
@@ -70,7 +72,7 @@ export function About() {
                 src="/profile/tanmay.jpg"
                 alt="Tanmay Potnurwar"
                 fill
-                sizes="(min-width: 1024px) 160px, (min-width: 640px) 144px, 128px"
+                sizes="(min-width: 1024px) 144px, (min-width: 640px) 128px, 112px"
                 className="object-cover"
                 priority
               />
@@ -78,13 +80,13 @@ export function About() {
 
             <div className="flex-1">
               <p className="eyebrow">01 — About</p>
-              <h2 className="display mt-3 text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+              <h2 className="display mt-2.5 text-3xl sm:text-4xl lg:text-[2.65rem] tracking-tight">
                 Practical systems,
                 <br />
                 thoughtfully built.
               </h2>
               {/* Profile location metadata */}
-              <div className="mt-3.5 flex items-center gap-2 text-xs font-semibold text-[var(--muted)]">
+              <div className="mt-2.5 flex items-center gap-2 text-xs font-semibold text-[var(--muted)]">
                 <span className="inline-flex items-center gap-1.5">
                   <MapPin size={13} style={{ color: "var(--accent)" }} /> Pune, India
                 </span>
@@ -92,7 +94,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="mt-6 space-y-3">
+          <div className="mt-4 sm:mt-5 space-y-2.5">
             <p className="muted max-w-xl text-base sm:text-lg leading-relaxed">
               I'm Tanmay Potnurwar, a final-year Computer Engineering student who enjoys turning messy real-world problems into practical AI, data, and backend systems.
             </p>
@@ -103,22 +105,22 @@ export function About() {
         </Reveal>
 
         {/* Education Card */}
-        <Reveal delay={0.08} className="card p-6 sm:p-7">
+        <Reveal delay={0.08} className="card p-5 sm:p-6">
           <p className="eyebrow">Education</p>
-          <h3 className="mt-3.5 text-2xl font-bold tracking-tight">B.E. Computer Engineering</h3>
-          <p className="muted mt-1 text-sm">Ajeenkya DY Patil School of Engineering · 2023–2027</p>
+          <h3 className="mt-2.5 text-xl sm:text-2xl font-bold tracking-tight">B.E. Computer Engineering</h3>
+          <p className="muted mt-1 text-xs sm:text-sm">Ajeenkya DY Patil School of Engineering · 2023–2027</p>
 
-          <div className="mt-7 border-t pt-5" style={{ borderColor: "var(--line)" }}>
+          <div className="mt-5 border-t pt-4" style={{ borderColor: "var(--line)" }}>
             <p className="eyebrow">Academic performance</p>
-            <p className="mt-2.5 text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
+            <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
               Current SGPA
             </p>
             <p className="mt-1 text-3xl sm:text-4xl font-bold tracking-tight">
               9.14 <span className="text-base font-normal text-[var(--muted)]">/ 10</span>
             </p>
 
-            <p className="eyebrow mt-6">Current focus</p>
-            <p className="muted mt-1 text-sm font-medium">AI · Generative AI · Data · Backend</p>
+            <p className="eyebrow mt-4 sm:mt-5">Current focus</p>
+            <p className="muted mt-1 text-xs sm:text-sm font-medium">AI · Generative AI · Data · Backend</p>
           </div>
         </Reveal>
       </div>
@@ -137,10 +139,18 @@ const internshipTechs = [
 ];
 
 const keyContributions = [
-  "Built prompt-engineering workflows using Gemini, Groq, and Mistral for structured parameter extraction, achieving 90% accuracy.",
-  "Developed document-processing workflows combining OCR, LLM extraction, and structured data generation.",
-  "Contributed to RAG and prompt-engineering workflows that improved the reliability of AI-assisted document analysis.",
-  "Designed a hybrid Static + Dynamic knowledge base in ChromaDB with metadata-based retrieval and structure-aware semantic chunking.",
+  <>
+    Built <strong className="font-semibold text-[var(--text)]">prompt-engineering workflows</strong> using <strong className="font-semibold text-[var(--text)]">Gemini, Groq, and Mistral</strong> for structured parameter extraction, achieving <strong className="font-semibold text-[var(--accent)]">90% accuracy</strong>.
+  </>,
+  <>
+    Developed <strong className="font-semibold text-[var(--text)]">document-processing workflows</strong> combining <strong className="font-semibold text-[var(--text)]">OCR</strong>, <strong className="font-semibold text-[var(--text)]">LLM extraction</strong>, and structured data generation.
+  </>,
+  <>
+    Contributed to <strong className="font-semibold text-[var(--text)]">RAG and prompt-engineering workflows</strong> that improved the reliability of AI-assisted document analysis.
+  </>,
+  <>
+    Designed a hybrid <strong className="font-semibold text-[var(--text)]">Static + Dynamic knowledge base</strong> in <strong className="font-semibold text-[var(--text)]">ChromaDB</strong> with <strong className="font-semibold text-[var(--text)]">metadata-based retrieval</strong> and structure-aware semantic chunking.
+  </>,
 ];
 
 export function Experience() {
@@ -475,19 +485,88 @@ function ProjectCard({
   project,
   featured = false,
   isFlagship = false,
+  fullWidth = false,
 }: {
   project: Project;
   featured?: boolean;
   isFlagship?: boolean;
+  fullWidth?: boolean;
 }) {
   const github = projectGithub[project.slug];
   const imageSrc = projectAssets[project.slug] ?? project.image;
 
+  if (fullWidth) {
+    return (
+      <article className="card group flex h-full flex-col md:flex-row overflow-hidden transition-all duration-200 hover:-translate-y-1">
+        {/* Project Thumbnail Image - Left on desktop */}
+        <div
+          className="relative aspect-[16/9] md:aspect-auto md:w-5/12 overflow-hidden border-b md:border-b-0 md:border-r bg-[var(--surface-raised)] shrink-0 min-h-[220px]"
+          style={{ borderColor: "var(--line)" }}
+        >
+          <Image
+            src={imageSrc}
+            alt={`${project.title} project preview`}
+            fill
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.018]"
+          />
+        </div>
+
+        {/* Card Body & Actions - Right on desktop */}
+        <div className="p-5 sm:p-7 flex-1 flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between gap-2">
+              <p className="eyebrow !text-[0.68rem]">{project.category}</p>
+            </div>
+
+            <h3 className="mt-2 text-lg sm:text-xl font-bold tracking-tight text-[var(--text)] transition-colors duration-200 group-hover:text-[var(--accent-hover)]">
+              {project.title}
+            </h3>
+
+            <p className="muted mt-2.5 text-xs sm:text-sm leading-relaxed max-w-2xl">
+              {project.description}
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {project.technologies.slice(0, 5).map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border px-2.5 py-0.5 text-[0.72rem] font-medium"
+                  style={{ borderColor: "var(--line)", color: "var(--muted)" }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-2.5">
+            <Link
+              className="btn btn-primary text-xs sm:text-sm !py-2 !px-3.5 group/cta"
+              href={`/projects/${project.slug}`}
+            >
+              <span>View case study →</span>
+            </Link>
+            {github && (
+              <a
+                className="btn text-xs sm:text-sm !py-2 !px-3"
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${project.title} on GitHub`}
+              >
+                <Github size={14} />
+                <span>GitHub</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </article>
+    );
+  }
+
   return (
-    <article
-      className={`card group flex h-full flex-col justify-between overflow-hidden transition-all duration-200 hover:-translate-y-1 ${isFlagship ? "ring-1 ring-[var(--accent)]/40 shadow-lg" : ""
-        }`}
-    >
+    <article className="card group flex h-full flex-col justify-between overflow-hidden transition-all duration-200 hover:-translate-y-1">
       <div>
         {/* Project Thumbnail Image */}
         <div
@@ -509,14 +588,14 @@ function ProjectCard({
             <p className="eyebrow !text-[0.68rem]">{project.category}</p>
             {isFlagship && (
               <span
-                className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider border"
+                className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.62rem] font-bold uppercase tracking-wider border"
                 style={{
                   borderColor: "var(--accent)",
                   color: "var(--accent)",
-                  background: "color-mix(in srgb, var(--accent) 12%, transparent)",
+                  background: "color-mix(in srgb, var(--accent) 10%, transparent)",
                 }}
               >
-                <Sparkles size={10} /> Flagship Project
+                <Sparkles size={9} /> Flagship Project
               </span>
             )}
           </div>
@@ -614,7 +693,7 @@ export function Projects() {
           </div>
         </div>
 
-        {/* ADDITIONAL WORK (2-Column Desktop Grid) */}
+        {/* ADDITIONAL WORK (2-Column Desktop Grid with balanced full-width 5th item) */}
         <div className="mt-14 sm:mt-16">
           <Reveal>
             <div className="flex items-center gap-2.5 mb-5">
@@ -623,11 +702,18 @@ export function Projects() {
             </div>
           </Reveal>
           <div className="grid gap-5 sm:gap-6 grid-cols-1 md:grid-cols-2">
-            {moreProjects.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 0.06} className="h-full">
-                <ProjectCard project={project} />
-              </Reveal>
-            ))}
+            {moreProjects.map((project, i) => {
+              const isLastSingle = i === moreProjects.length - 1 && moreProjects.length % 2 === 1;
+              return (
+                <Reveal
+                  key={project.slug}
+                  delay={i * 0.06}
+                  className={`h-full ${isLastSingle ? "md:col-span-2" : ""}`}
+                >
+                  <ProjectCard project={project} fullWidth={isLastSingle} />
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -668,7 +754,7 @@ const credentialsList: Credential[] = [
     icon: <BookOpen size={18} />,
     actionLabel: "View certificate ↗",
     href: "https://drive.google.com/file/d/1Lpx2EcGzPzy1OkgvhvNMkfcpaAtFfw4O/view?usp=sharing",
-    ariaLabel: "Open HandSign Translator certificate in Google Drive (opens in a new tab)",
+    ariaLabel: "Open HandSign Translator research paper in Google Drive (opens in a new tab)",
   },
   {
     category: "CERTIFICATION",
@@ -733,7 +819,7 @@ function CredentialCard({ item }: { item: Credential }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={item.ariaLabel}
-            className="btn btn-primary text-xs !py-2 !px-3.5 group/btn inline-flex items-center gap-1.5"
+            className="btn text-xs !py-2 !px-3.5 group/btn inline-flex items-center gap-1.5 font-medium hover:border-[var(--accent)] hover:text-[var(--accent)]"
           >
             <span>{item.actionLabel}</span>
           </a>
@@ -817,31 +903,41 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2.5 lg:justify-end">
-              <ContactEmailActions />
-              <a
-                className="btn"
-                href={PHONE_TEL_URL}
-                aria-label="Call Tanmay at +91 8623932184"
-              >
-                <Phone size={15} /> <span>Call</span>
-              </a>
-              <a
-                className="btn"
-                href="https://www.linkedin.com/in/tanmay-potnurwar-a76745357/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin size={15} /> <span>LinkedIn</span>
-              </a>
-              <a
-                className="btn"
-                href="https://github.com/Tanmay0108"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={15} /> <span>GitHub</span>
-              </a>
+            <div className="flex flex-col gap-3 lg:items-end w-full sm:w-auto">
+              {/* Primary CTA + Visible Secondary Profiles */}
+              <div className="flex flex-wrap items-center gap-2.5">
+                <EmailMeButton className="text-sm !py-2.5 !px-4 shadow-sm font-semibold" />
+                <a
+                  className="btn text-sm !py-2.5 !px-3.5 text-[var(--text)] font-medium"
+                  href="https://www.linkedin.com/in/tanmay-potnurwar-a76745357/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Tanmay on LinkedIn (opens in new tab)"
+                >
+                  <Linkedin size={15} /> <span>LinkedIn</span>
+                </a>
+                <a
+                  className="btn text-sm !py-2.5 !px-3.5 text-[var(--text)] font-medium"
+                  href="https://github.com/Tanmay0108"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Tanmay on GitHub (opens in new tab)"
+                >
+                  <Github size={15} /> <span>GitHub</span>
+                </a>
+              </div>
+
+              {/* Utility Quick-Actions (Slightly less visually dominant) */}
+              <div className="flex flex-wrap items-center gap-2">
+                <CopyEmailButton className="text-xs !py-1.5 !px-3 text-[var(--muted)] hover:text-[var(--text)] border-[var(--line)] bg-[var(--surface-raised)]" />
+                <a
+                  className="btn text-xs !py-1.5 !px-3 text-[var(--muted)] hover:text-[var(--text)] border-[var(--line)] bg-[var(--surface-raised)]"
+                  href={PHONE_TEL_URL}
+                  aria-label="Call Tanmay at +91 8623932184"
+                >
+                  <Phone size={13} /> <span>Call</span>
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

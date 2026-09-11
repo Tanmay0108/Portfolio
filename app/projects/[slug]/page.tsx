@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Github, Sparkles, Workflow } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/data/projects";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const projectAssets: Record<string, string> = {
   "niyam-drishti": "/projects/niyam-drishti.png",
@@ -96,13 +97,16 @@ export default async function ProjectPage({
           borderColor: "var(--line)",
         }}
       >
-        <div className="shell flex items-center justify-between py-4">
+        <div className="shell flex items-center justify-between py-3.5 sm:py-4">
           <Link href="/" className="font-bold text-lg tracking-tight">
             Tanmay<span style={{ color: "var(--accent)" }}>.</span>
           </Link>
-          <Link href="/#projects" className="btn !py-2 !px-4 text-xs font-semibold">
-            <ArrowLeft size={14} /> Back to projects
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/#projects" className="btn !py-2 !px-4 text-xs font-semibold">
+              <ArrowLeft size={14} /> Back to projects
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 

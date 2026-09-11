@@ -21,7 +21,6 @@ export function Navbar() {
       // If visitor is near the top (in Hero section), no navigation link should appear active
       if (window.scrollY < 260) {
         setActive("");
-        // Clean up hash if user scrolled back to top
         if (window.location.hash) {
           window.history.replaceState(null, "", window.location.pathname);
         }
@@ -43,7 +42,6 @@ export function Navbar() {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // Active if the top of section is within upper viewport area
           if (rect.top <= 200 && rect.bottom >= 120) {
             current = id;
           }
@@ -60,7 +58,9 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
@@ -85,8 +85,12 @@ export function Navbar() {
     setOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      // Cleanly update history state without jarring jumps
+      const navOffset = 92;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: Math.max(0, elementPosition - navOffset),
+        behavior: "smooth",
+      });
       window.history.replaceState(null, "", `#${id}`);
     }
   };
@@ -106,44 +110,54 @@ export function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b transition-colors duration-200"
+      className="fixed top-0 left-0 right-0 z-50 w-full border-b transition-colors duration-200"
       style={{
-        backgroundColor: "color-mix(in srgb, var(--bg) 85%, transparent)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
+        backgroundColor: "color-mix(in srgb, var(--bg) 88%, transparent)",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
         borderColor: "var(--line)",
       }}
     >
-      <div className="shell flex items-center justify-between py-4 sm:py-4.5">
-        <a href="#top" className="font-bold tracking-tight text-xl group" aria-label="Tanmay home">
-          Tanmay<span style={{ color: "var(--accent)" }}>.</span>
-        </a>
-
-        {/* Desktop Navigation */}
-        <div className="hidden items-center gap-7 md:flex">
-          <nav aria-label="Primary navigation" className="flex items-center gap-6">
-            {links.map(({ id, label }) => (
-              <span key={id}>{renderNavLink(id, label)}</span>
-            ))}
-          </nav>
-          <div className="flex items-center gap-3 pl-2 border-l" style={{ borderColor: "var(--line)" }}>
-            <a
-              href="/resume/tanmay-resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary !min-h-[38px] !py-2 !px-4 text-xs font-semibold uppercase tracking-wider transition-all duration-200 hover:brightness-110"
-            >
-              Resume
-            </a>
-            <ThemeToggle />
-          </div>
+      <div className="shell grid grid-cols-[auto_1fr_auto] items-center py-3.5 sm:py-4">
+        {/* Left: Brand Logo */}
+        <div className="flex items-center">
+          <a
+            href="#top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              window.history.replaceState(null, "", window.location.pathname);
+            }}
+            className="font-bold tracking-tight text-xl group select-none"
+            aria-label="Tanmay - back to top"
+          >
+            Tanmay<span style={{ color: "var(--accent)" }}>.</span>
+          </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-2.5 md:hidden">
+        {/* Center: Desktop Navigation Links visually centered within shell */}
+        <nav
+          aria-label="Primary navigation"
+          className="hidden md:flex items-center justify-center gap-7 lg:gap-8"
+        >
+          {links.map(({ id, label }) => (
+            <span key={id}>{renderNavLink(id, label)}</span>
+          ))}
+        </nav>
+
+        {/* Right: Actions (Resume + ThemeToggle + Mobile Hamburger) */}
+        <div className="flex items-center justify-end gap-3">
+          <a
+            href="/resume/tanmay-resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary !min-h-[38px] !py-1.5 !px-4 text-xs font-semibold uppercase tracking-wider transition-transform duration-200 hidden sm:inline-flex"
+          >
+            Resume
+          </a>
           <ThemeToggle />
           <button
-            className="icon-button"
+            className="icon-button md:hidden"
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
             aria-controls="mobile-navigation"
@@ -159,17 +173,20 @@ export function Navbar() {
         <div
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="mobile-nav md:hidden border-b pb-6 pt-3"
+          className="mobile-nav md:hidden border-b pb-6 pt-3 shadow-lg"
           style={{
             borderColor: "var(--line)",
             backgroundColor: "var(--surface)",
           }}
         >
-          <div className="shell flex flex-col gap-3">
+          <div className="shell flex flex-col gap-1.5">
             {links.map(({ id, label }) => (
               <span key={id}>{renderNavLink(id, label, true)}</span>
             ))}
-            <div className="mt-3 pt-4 border-t flex flex-col gap-3" style={{ borderColor: "var(--line)" }}>
+            <div
+              className="mt-3 pt-4 border-t flex flex-col gap-3 sm:hidden"
+              style={{ borderColor: "var(--line)" }}
+            >
               <a
                 className="btn btn-primary w-full text-center text-sm font-semibold py-2.5"
                 href="/resume/tanmay-resume.pdf"

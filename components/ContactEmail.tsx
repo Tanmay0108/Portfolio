@@ -9,7 +9,22 @@ export const PHONE_NUMBER = "+91 8623932184";
 export const PHONE_RAW = "8623932184";
 export const PHONE_TEL_URL = `tel:+918623932184`;
 
-export function ContactEmailActions() {
+export function EmailMeButton({ className = "" }: { className?: string }) {
+  return (
+    <a
+      className={`btn btn-primary ${className}`}
+      href={GMAIL_COMPOSE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Email Tanmay via Gmail (opens in new tab)"
+    >
+      <Mail size={16} />
+      <span>Email me</span>
+    </a>
+  );
+}
+
+export function CopyEmailButton({ className = "" }: { className?: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -31,36 +46,32 @@ export function ContactEmailActions() {
   };
 
   return (
-    <>
-      <a
-        className="btn btn-primary"
-        href={GMAIL_COMPOSE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Email Tanmay via Gmail (opens in new tab)"
-      >
-        <Mail size={16} />
-        <span>Email me</span>
-      </a>
+    <button
+      type="button"
+      onClick={handleCopy}
+      className={`btn ${className}`}
+      aria-label="Copy email address to clipboard"
+    >
+      {copied ? (
+        <>
+          <Check size={14} className="text-[var(--accent)]" />
+          <span className="text-[var(--accent)] font-medium">Email copied!</span>
+        </>
+      ) : (
+        <>
+          <Copy size={14} />
+          <span>Copy email</span>
+        </>
+      )}
+    </button>
+  );
+}
 
-      <button
-        type="button"
-        onClick={handleCopy}
-        className="btn"
-        aria-label="Copy email address to clipboard"
-      >
-        {copied ? (
-          <>
-            <Check size={16} className="text-[var(--accent)]" />
-            <span className="text-[var(--accent)]">Email copied!</span>
-          </>
-        ) : (
-          <>
-            <Copy size={16} />
-            <span>Copy email</span>
-          </>
-        )}
-      </button>
+export function ContactEmailActions() {
+  return (
+    <>
+      <EmailMeButton />
+      <CopyEmailButton />
     </>
   );
 }

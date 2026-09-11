@@ -29,7 +29,7 @@ export function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Scroll back to top"
-      className="back-to-top fixed bottom-6 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-full border shadow-lg transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none"
+      className="back-to-top fixed bottom-6 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-full border shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2"
       style={{
         borderColor: "var(--line)",
         backgroundColor: "color-mix(in srgb, var(--surface) 90%, transparent)",
@@ -37,7 +37,7 @@ export function BackToTop() {
         color: "var(--muted)",
       }}
     >
-      <ArrowUp size={17} className="transition-colors hover:text-[var(--accent)]" />
+      <ArrowUp size={17} />
     </button>
   );
 }

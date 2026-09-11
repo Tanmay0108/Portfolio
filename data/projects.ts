@@ -41,7 +41,7 @@ export const projects: Project[] = [
     image,
     tagline: "Automated packaging compliance and e-commerce listing audit pipeline.",
     description:
-      "Automated packaging audit pipeline that extracts listing metadata and label text via docTR OCR, validating Legal Metrology declarations with Gemini to streamline compliance.",
+      "Automates packaging compliance audits by extracting label text with docTR OCR and validating statutory Legal Metrology rules with Gemini.",
     technologies: ["Python", "FastAPI", "docTR", "Gemini", "Crawl4AI", "MongoDB"],
     problem:
       "Packaging compliance reviews are repetitive, time-consuming, and difficult to scale across thousands of product listings and physical packaging images.",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     image,
     tagline: "Local video semantic search with timestamped question-answering.",
     description:
-      "Local video semantic search that transcribes course recordings with Whisper and retrieves timestamped answers via vector embeddings and Llama 3.2 synthesis for direct navigation.",
+      "Enables local semantic video search and timestamped question-answering across lecture audio using Whisper and Llama 3.2.",
     technologies: ["Python", "Whisper", "Ollama", "Llama 3.2", "FFmpeg"],
     problem:
       "Finding a specific conceptual explanation in multi-hour course recordings is tedious when video material cannot be semantically searched.",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     image: "/projects/iverix.svg",
     tagline: "High-precision BMR auditing with a dual knowledge-base RAG workflow.",
     description:
-      "High-precision document auditing system using a dual-store ChromaDB RAG architecture to cross-reference Batch Manufacturing Records against static regulatory standards with zero hallucination.",
+      "Audits 100+ page pharmaceutical Batch Manufacturing Records against standards using a dual-collection ChromaDB RAG architecture.",
     technologies: ["Python", "ChromaDB", "LangChain", "Gemini", "Ollama"],
     problem:
       "Reviewing 100+ page pharmaceutical Batch Manufacturing Records (BMR) against evolving regulatory standards is labor-intensive and vulnerable to oversight.",
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     image,
     tagline: "Private, local-AI Reddit brand intelligence and sentiment monitoring.",
     description:
-      "Privacy-first social intelligence platform ingesting Reddit discussions via PRAW and running multi-threaded local Ollama inference for sentiment and urgency analytics without cloud leakage.",
+      "Monitors brand sentiment and topic urgency locally by streaming Reddit discussions through PRAW into multi-threaded Ollama inference.",
     technologies: ["Python", "Ollama", "Streamlit", "PRAW", "SQLite"],
     problem:
       "Brand managers need real-time customer discussion monitoring but cannot send proprietary brand keywords or user feedback to third-party cloud APIs.",
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     image,
     tagline: "Clinical-data interface for heart disease risk prediction.",
     description:
-      "Clinical machine learning system predicting cardiovascular risk from diagnostic metrics through a Scikit-learn classification pipeline, FastAPI backend, and clinician-friendly interface.",
+      "Predicts cardiovascular disease risk from patient diagnostic indicators using a trained Scikit-learn classifier served via FastAPI.",
     technologies: ["Python", "Scikit-learn", "FastAPI", "Streamlit", "Pandas"],
     problem:
       "Predictive cardiovascular models often remain confined to research notebooks rather than being accessible to healthcare operators in a clean, intuitive interface.",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     image,
     tagline: "Fast content-based recommendations built from movie metadata.",
     description:
-      "Content-based recommendation engine utilizing TF-IDF vectorization and cosine similarity across movie metadata to deliver instant, personalized film suggestions without prior user ratings.",
+      "Delivers instant content-based movie recommendations by vectorizing metadata features with TF-IDF and calculating cosine similarity.",
     technologies: ["Python", "NLP", "TF-IDF", "FastAPI", "Streamlit"],
     problem:
       "Users need accurate, immediate recommendations without requiring extensive personal watch history or rating records (the cold-start problem).",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     image,
     tagline: "Interactive country-level global development indicator analytics.",
     description:
-      "Interactive Power BI analytics suite featuring automated Python REST extraction from the World Bank API and a 7-dataset star schema for multi-country trend comparisons.",
+      "Ingests longitudinal World Bank indicator data with Python into a normalized star schema for interactive Power BI DAX analytics.",
     technologies: ["Python", "Power BI", "DAX", "REST API", "Data Modelling"],
     problem:
       "Disparate development datasets across countries are difficult to synthesize into cohesive, cross-regional strategic insights.",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     image,
     tagline: "Inventory and financial reporting made accessible through a Python UI.",
     description:
-      "Desktop inventory control tool linking a Python GUI to relational MySQL databases with automated low-stock reorder triggers and structured multi-table financial reporting.",
+      "Enforces transactional data integrity and automated inventory reorder alerts through a Python desktop application backed by MySQL.",
     technologies: ["Python", "MySQL", "SQL", "mysql-connector", "Data Analysis"],
     problem:
       "Small-scale inventory tracking often relies on fragile spreadsheets prone to sync discrepancies, untracked stock-outs, and manual errors.",
