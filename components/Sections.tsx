@@ -52,6 +52,7 @@ const projectGithub: Record<string, string> = {
   "real-time-global-development-dashboard": "https://github.com/Tanmay0108/Real-Time-Global-Development-Dashboard",
   "reddinsight-ollama": "https://github.com/Tanmay0108/ReddInsight-Ollama",
   "movie-recommendation-system": "https://github.com/Tanmay0108/movie-recommendation",
+  "stock-portfolio-management-system": "https://github.com/Tanmay0108/Inventory-Stock-Management-System",
 };
 
 export function About() {

@@ -217,7 +217,7 @@ export const projects: Project[] = [
   },
   {
     slug: "stock-portfolio-management-system",
-    title: "Stock Portfolio Management System",
+    title: "Inventory & Stock Management System",
     category: "Data Analytics",
     featured: false,
     image,

@@ -9,6 +9,7 @@ const links = [
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "credentials", label: "Credentials" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -138,7 +139,7 @@ export function Navbar() {
         {/* Center: Desktop Navigation Links visually centered within shell */}
         <nav
           aria-label="Primary navigation"
-          className="hidden md:flex items-center justify-center gap-7 lg:gap-8"
+          className="hidden md:flex items-center justify-center gap-6 lg:gap-8"
         >
           {links.map(({ id, label }) => (
             <span key={id}>{renderNavLink(id, label)}</span>
