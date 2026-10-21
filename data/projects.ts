@@ -41,12 +41,12 @@ export const projects: Project[] = [
     image,
     tagline: "Automated packaging compliance and e-commerce listing audit pipeline.",
     description:
-      "Automates packaging compliance audits by extracting label text with docTR OCR and validating statutory Legal Metrology rules with Gemini.",
+      "Automates packaging compliance audits by extracting label text with docTR OCR and validating statutory Legal Metrology rules with Gemini—developed as a Smart India Hackathon solution.",
     technologies: ["Python", "FastAPI", "docTR", "Gemini", "Crawl4AI", "MongoDB"],
     problem:
       "Packaging compliance reviews are repetitive, time-consuming, and difficult to scale across thousands of product listings and physical packaging images.",
     solution:
-      "Built an automated workflow that collects product metadata, extracts printed label text through OCR, and validates mandatory statutory attributes using structured Gemini prompting.",
+      "Developed for the Smart India Hackathon problem statement: built an automated workflow that collects product metadata, extracts printed label text through OCR, and validates mandatory statutory attributes using structured Gemini prompting.",
     features: [
       "Multi-platform e-commerce collection (Amazon, Flipkart, Blinkit)",
       "OCR-based packaging text and symbol extraction with docTR",

@@ -141,13 +141,13 @@ const internshipTechs = [
 
 const keyContributions = [
   <>
-    Built <strong className="font-semibold text-[var(--text)]">prompt-engineering workflows</strong> using <strong className="font-semibold text-[var(--text)]">Gemini, Groq, and Mistral</strong> for structured parameter extraction, achieving <strong className="font-semibold text-[var(--accent)]">90% accuracy</strong>.
+    Built <strong className="font-semibold text-[var(--text)]">prompt-engineering workflows</strong> using <strong className="font-semibold text-[var(--text)]">Gemini, Groq, and Mistral</strong> for structured parameter extraction, achieving <strong className="font-semibold text-[var(--accent)]">90% extraction accuracy</strong> evaluated against manually verified ground-truth data.
   </>,
   <>
-    Developed <strong className="font-semibold text-[var(--text)]">document-processing workflows</strong> combining <strong className="font-semibold text-[var(--text)]">OCR</strong>, <strong className="font-semibold text-[var(--text)]">LLM extraction</strong>, and structured data generation.
+    Developed <strong className="font-semibold text-[var(--text)]">document-processing workflows</strong> combining <strong className="font-semibold text-[var(--text)]">OCR</strong>, <strong className="font-semibold text-[var(--text)]">LLM extraction</strong>, and structured data generation across 100+ page batch records.
   </>,
   <>
-    Contributed to <strong className="font-semibold text-[var(--text)]">RAG and prompt-engineering workflows</strong> that improved the reliability of AI-assisted document analysis.
+    Automated most <strong className="font-semibold text-[var(--text)]">repetitive BMR verification work</strong>, reducing the time required for manual cross-checking against the master BMR while retaining necessary human review.
   </>,
   <>
     Designed a hybrid <strong className="font-semibold text-[var(--text)]">Static + Dynamic knowledge base</strong> in <strong className="font-semibold text-[var(--text)]">ChromaDB</strong> with <strong className="font-semibold text-[var(--text)]">metadata-based retrieval</strong> and structure-aware semantic chunking.
@@ -207,7 +207,7 @@ export function Experience() {
               </div>
 
               <p className="muted mt-5 max-w-4xl text-sm sm:text-base leading-relaxed text-[var(--text)]">
-                Engineered an enterprise document processing pipeline for 100+ page documents, combining OCR, LLM-powered extraction, and AI-based verification. Architected and implemented core Python components for vector retrieval, knowledge-base management, and LLM integration workflows.
+                Engineered an AI-assisted document processing pipeline for 100+ page pharmaceutical Batch Manufacturing Records (BMRs), combining OCR, LLM-powered parameter extraction, and structured verification. Architected and implemented core Python components for vector retrieval, dual-collection knowledge-base management, and prompt-engineering workflows.
               </p>
 
               <p className="mt-3.5 text-xs text-[var(--muted)] flex items-center gap-2 font-medium">
@@ -293,8 +293,11 @@ export function Experience() {
                     <p className="mt-2 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[var(--text)]">
                       80–90%
                     </p>
-                    <p className="text-xs sm:text-sm text-[var(--muted)] mt-1.5 font-medium leading-relaxed">
-                      Automation of repetitive verification work
+                    <p className="text-xs sm:text-sm font-semibold text-[var(--text)] mt-1.5 leading-snug">
+                      Reduction in repetitive verification time
+                    </p>
+                    <p className="text-xs text-[var(--muted)] mt-2 leading-relaxed">
+                      Automated most repetitive BMR verification work, reducing the time required for manual cross-checking against the master BMR.
                     </p>
                   </div>
 
@@ -362,7 +365,7 @@ export function Experience() {
                       className="h-1.5 w-1.5 rounded-full shrink-0"
                       style={{ backgroundColor: "var(--accent)" }}
                     />
-                    <span>Production-ready system deployed and actively maintained.</span>
+                    <span>Internship handoff: Project documentation and implementation handed over to the internal team.</span>
                   </p>
                 </div>
               </div>
@@ -737,23 +740,23 @@ type Credential = {
 const credentialsList: Credential[] = [
   {
     category: "COMPETITION",
-    title: "SIH 2025 Finalist",
+    title: "Smart India Hackathon Grand Finale Finalist",
     context: "Smart India Hackathon · 2025",
     description:
-      "National finalist in Smart India Hackathon 2025, selected among top engineering teams nationwide for developing innovative software solutions to real-world government challenges.",
+      "Grand Finale Finalist in Smart India Hackathon 2025. Developed NiyamDrishti, an automated legal metrology and packaging compliance audit pipeline, to address statutory consumer product verification.",
     icon: <Trophy size={18} />,
     actionLabel: "View certificate ↗",
     href: "https://drive.google.com/file/d/166ZoKOq_rZzXkYnR1oChxj5QRFTW20Mh/view?usp=sharing",
-    ariaLabel: "Open SIH 2025 Finalist certificate in Google Drive (opens in a new tab)",
+    ariaLabel: "Open Smart India Hackathon Grand Finale Finalist certificate in Google Drive (opens in a new tab)",
   },
   {
     category: "RESEARCH",
     title: "HandSign Translator Bridging the Communication Gap for ISL Users",
-    context: "Research Paper · Nov 2025",
+    context: "Published Research Paper · Nov 2025",
     description:
       "Engineered a computer vision and deep learning translation system mapping Indian Sign Language gestures to text and speech, addressing real-time communication accessibility.",
     icon: <BookOpen size={18} />,
-    actionLabel: "View certificate ↗",
+    actionLabel: "View paper ↗",
     href: "https://drive.google.com/file/d/1Lpx2EcGzPzy1OkgvhvNMkfcpaAtFfw4O/view?usp=sharing",
     ariaLabel: "Open HandSign Translator research paper in Google Drive (opens in a new tab)",
   },
