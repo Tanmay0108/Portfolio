@@ -147,7 +147,7 @@ const keyContributions = [
     Developed <strong className="font-semibold text-[var(--text)]">document-processing workflows</strong> combining <strong className="font-semibold text-[var(--text)]">OCR</strong>, <strong className="font-semibold text-[var(--text)]">LLM extraction</strong>, and structured data generation across 100+ page batch records.
   </>,
   <>
-    Automated most <strong className="font-semibold text-[var(--text)]">repetitive BMR verification work</strong>, reducing the time required for manual cross-checking against the master BMR while retaining necessary human review.
+    Automated approximately <strong className="font-semibold text-[var(--text)]">80–90% of repetitive verification work</strong> on Batch Manufacturing Records, cutting manual cross-check time while reserving human review for exceptions.
   </>,
   <>
     Designed a hybrid <strong className="font-semibold text-[var(--text)]">Static + Dynamic knowledge base</strong> in <strong className="font-semibold text-[var(--text)]">ChromaDB</strong> with <strong className="font-semibold text-[var(--text)]">metadata-based retrieval</strong> and structure-aware semantic chunking.
@@ -297,7 +297,7 @@ export function Experience() {
                       Reduction in repetitive verification time
                     </p>
                     <p className="text-xs text-[var(--muted)] mt-2 leading-relaxed">
-                      Automated most repetitive BMR verification work, reducing the time required for manual cross-checking against the master BMR.
+                      Automated approximately 80–90% of repetitive BMR verification work, leaving minimal manual verification for exceptions and final checks.
                     </p>
                   </div>
 
